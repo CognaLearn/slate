@@ -14,30 +14,50 @@ Resources related to <code>question builder management</code>.
 > 200
 
 ```json
-[
-  {
-    "id": 1,
-    "accountID": 1,
-    "ownerID": 1,
-    
-    "question": "What is API Documentation?",
-    "questionIsHTML": true,
-    "type": "mcqs",
-    "attachments": { },
-    "options": { },
-    "remarks": "Lorem Ipsum",
-    "tags": "Lorem Ipsum",
-    "canAllowStudentAttachments": true,
-    "dateCreated": "2018-05-25T06:01:04Z",
-    "lastModified": "2018-05-25T06:01:04Z",
-    
-    "regexRestriction": "32dfsvdsa234",
-    "settings": { },
-    "isRequired": true,
-    
-    "uuid": "d60629e6"
-  }
-]
+{
+    "data": [
+        {
+            "id": 1,
+            "accountID": 1,
+            "ownerID": 1,
+            "question": "<p>Why did the chicken cross the road?</p>",
+            "questionIsHTML": true,
+            "type": "mcqs",
+            "attachments": {
+                "test": true
+            },
+            "options": {
+                "test": true
+            },
+            "labels": null,
+            "remarks": "Notes",
+            "tags": null,
+            "canAllowStudentAttachments": 0,
+            "dateCreated": "2018-07-13T06:54:41Z",
+            "lastModified": "2018-07-13T06:54:41Z",
+            "regexRestriction": "Question #1",
+            "settings": {
+                "test": false
+            },
+            "isRequired": true,
+            "uuid": "8e0fcc9d-f4e9-4a0f-a9e3-f382fc3401c4",
+            "isArchived": false,
+            "isTrashed": false
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "total": 9,
+            "count": 3,
+            "per_page": 3,
+            "current_page": 1,
+            "total_pages": 3,
+            "links": {
+                "next": "http://localhost:8041/api/v1/questions?page=2"
+            }
+        }
+    }
+}
 ```
 
 > 403
@@ -53,24 +73,29 @@ Resources related to <code>question builder management</code>.
 
 This resource allows to list all questions.
 
+
+
+
 ### HTTP Request
 
 `GET [BASE_URL]/questions`
 
-### URL Parameters
+### HTTP Get Parameters
 
-`No URL parameters required.`
+[Standard HTTP Get Parameters](#principles)
 
-### Request Header
+`i.e. [BASE_URL]/questions?page=1&per_page=3`
+
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
+### HTTP Post Parameters
 
-`No request parameters required.`
+`No HTTP post parameters required.`
 
 
 
@@ -84,30 +109,38 @@ Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipisci
 
 ## Create
 
-> 200
+> 201
 
 ```json
 {
-  "id": 1,
-  "accountID": 1,
-  "ownerID": 1,
-  
-  "question": "What is API Documentation?",
-  "questionIsHTML": true,
-  "type": "mcqs",
-  "attachments": { },
-  "options": { },
-  "remarks": "Lorem Ipsum",
-  "tags": "Lorem Ipsum",
-  "canAllowStudentAttachments": true,
-  "dateCreated": "2018-05-25T06:01:04Z",
-  "lastModified": "2018-05-25T06:01:04Z",
-  
-  "regexRestriction": "32dfsvdsa234",
-  "settings": { },
-  "isRequired": true,
-    
-  "uuid": "d60629e6"
+    "data": {
+        "id": 6,
+        "accountID": 1,
+        "ownerID": 1,
+        "question": "<p>Why did the chicken cross the road?</p>",
+        "questionIsHTML": true,
+        "type": "mcqs",
+        "attachments": {
+            "test": true
+        },
+        "options": {
+            "test": true
+        },
+        "labels": null,
+        "remarks": "Notes",
+        "tags": null,
+        "canAllowStudentAttachments": 0,
+        "dateCreated": "2018-07-13T07:14:46Z",
+        "lastModified": "2018-07-19T06:19:14Z",
+        "regexRestriction": "Question #1",
+        "settings": {
+            "test": false
+        },
+        "isRequired": true,
+        "uuid": "afcbd354-f1a9-4f27-a915-32f59c5237e0",
+        "isArchived": false,
+        "isTrashed": false
+    }
 }
 ```
 
@@ -153,31 +186,31 @@ This resource create new question.
 
 `POST [BASE_URL]/questions`
 
-### URL Parameters
+### HTTP Get Parameters
 
-`No URL parameters required.`
+`No HTTP get parameters required.`
 
-### Request Header
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
-Parameter | Type | Values | Description
---------- | ------- | ------- | -----------
-question `required`| json | {"isHTML": true, "question": "<p>5Why did the chicken cross the road?</p>"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type `required`| enum[string] | mcqs, mcqm, openended, rating, binary | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-isRequired| boolean | true, false | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-canAllowStudentAttachments| boolean | true, false | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-regexRestriction| string | (?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-notes| string | Lorem ipsum dolor sit amet | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-tags| string |  | 
-attachments| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-options| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-labels| json | { "key": "value"} | 
-settings| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+question <br /> `required`| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isRequired| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+canAllowStudentAttachments| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+regexRestriction| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+notes| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+tags| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. 
+attachments| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+options| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+labels| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. 
+settings| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
                 
 
 
@@ -189,26 +222,34 @@ settings| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adi
 
 ```json
 {
-  "id": 1,
-  "accountID": 1,
-  "ownerID": 1,
-  
-  "question": "What is API Documentation?",
-  "questionIsHTML": true,
-  "type": "mcqs",
-  "attachments": { },
-  "options": { },
-  "remarks": "Lorem Ipsum",
-  "tags": "Lorem Ipsum",
-  "canAllowStudentAttachments": true,
-  "dateCreated": "2018-05-25T06:01:04Z",
-  "lastModified": "2018-05-25T06:01:04Z",
-  
-  "regexRestriction": "32dfsvdsa234",
-  "settings": { },
-  "isRequired": true,
-    
-  "uuid": "d60629e6"
+    "data": {
+        "id": 6,
+        "accountID": 1,
+        "ownerID": 1,
+        "question": "<p>Why did the chicken cross the road?</p>",
+        "questionIsHTML": true,
+        "type": "mcqs",
+        "attachments": {
+            "test": true
+        },
+        "options": {
+            "test": true
+        },
+        "labels": null,
+        "remarks": "Notes",
+        "tags": null,
+        "canAllowStudentAttachments": 0,
+        "dateCreated": "2018-07-13T07:14:46Z",
+        "lastModified": "2018-07-19T06:19:14Z",
+        "regexRestriction": "Question #1",
+        "settings": {
+            "test": false
+        },
+        "isRequired": true,
+        "uuid": "afcbd354-f1a9-4f27-a915-32f59c5237e0",
+        "isArchived": false,
+        "isTrashed": false
+    }
 }
 ```
 
@@ -240,22 +281,22 @@ This resource retrieve specific question.
 
 `GET [BASE_URL]/questions/`**uuid**
 
-### URL Parameters
+### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
 
-### Request Header
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
+### HTTP Post Parameters
 
-`No request parameters required.`
+`No HTTP post parameters required.`
 
 
 
@@ -271,26 +312,34 @@ Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipisci
 
 ```json
 {
-  "id": 1,
-  "accountID": 1,
-  "ownerID": 1,
-  
-  "question": "What is API Documentation?",
-  "questionIsHTML": true,
-  "type": "mcqs",
-  "attachments": { },
-  "options": { },
-  "remarks": "Lorem Ipsum",
-  "tags": "Lorem Ipsum",
-  "canAllowStudentAttachments": true,
-  "dateCreated": "2018-05-25T06:01:04Z",
-  "lastModified": "2018-05-25T06:01:04Z",
-  
-  "regexRestriction": "32dfsvdsa234",
-  "settings": { },
-  "isRequired": true,
-    
-  "uuid": "d60629e6"
+    "data": {
+        "id": 6,
+        "accountID": 1,
+        "ownerID": 1,
+        "question": "<p>Why did the chicken cross the road?</p>",
+        "questionIsHTML": true,
+        "type": "mcqs",
+        "attachments": {
+            "test": true
+        },
+        "options": {
+            "test": true
+        },
+        "labels": null,
+        "remarks": "Notes",
+        "tags": null,
+        "canAllowStudentAttachments": 0,
+        "dateCreated": "2018-07-13T07:14:46Z",
+        "lastModified": "2018-07-19T06:19:14Z",
+        "regexRestriction": "Question #1",
+        "settings": {
+            "test": false
+        },
+        "isRequired": true,
+        "uuid": "afcbd354-f1a9-4f27-a915-32f59c5237e0",
+        "isArchived": false,
+        "isTrashed": false
+    }
 }
 ```
 
@@ -336,33 +385,34 @@ This resource update selected question.
 
 `PUT [BASE_URL]/questions/`**uuid**
 
-### URL Parameters
+### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
 
-### Request Header
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
-Parameter | Type | Values | Description
---------- | ------- | ------- | -----------
-question `required`| json | {"isHTML": true, "question": "<p>5Why did the chicken cross the road?</p>"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type `required`| enum[string] | mcqs, mcqm, openended, rating, binary | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-isRequired| boolean | true, false | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-canAllowStudentAttachments| boolean | true, false | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-regexRestriction| string | (?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-notes| string | Lorem ipsum dolor sit amet | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-tags| string |  | 
-attachments| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-options| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-labels| json | { "key": "value"} | 
-settings| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+question <br /> `required`| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isRequired| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+canAllowStudentAttachments| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+regexRestriction| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+notes| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+tags| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. 
+attachments| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+options| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+labels| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. 
+settings| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+
 
 
 
@@ -373,13 +423,49 @@ settings| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adi
 
 ## Archive
 
-> 200
+> 200 (Archived)
 
 ```json
 {
-  "deleted": true
+  "archived": true
 }
 ```
+
+> 200 (Unarchived)
+
+```json
+{
+    "data": {
+        "id": 6,
+        "accountID": 1,
+        "ownerID": 1,
+        "question": "<p>Why did the chicken cross the road?</p>",
+        "questionIsHTML": true,
+        "type": "mcqs",
+        "attachments": {
+            "test": true
+        },
+        "options": {
+            "test": true
+        },
+        "labels": null,
+        "remarks": "Notes",
+        "tags": null,
+        "canAllowStudentAttachments": 0,
+        "dateCreated": "2018-07-13T07:14:46Z",
+        "lastModified": "2018-07-19T06:19:14Z",
+        "regexRestriction": "Question #1",
+        "settings": {
+            "test": false
+        },
+        "isRequired": true,
+        "uuid": "afcbd354-f1a9-4f27-a915-32f59c5237e0",
+        "isArchived": false,
+        "isTrashed": false
+    }
+}
+```
+
 
 > 403
 
@@ -403,61 +489,132 @@ settings| json | { "key": "value"} | Lorem ipsum dolor sit amet, consectetur adi
 }
 ```
 
-This resource archive selected question.
+This resource archive/unarchive selected question.
+
+### HTTP Request
+
+`PATCH [BASE_URL]/questions/`**uuid**
+
+### HTTP Get Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected question.
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+
+`No HTTP post parameters required.`
+
+
+
+
+
+
+
+
+
+## Trash
+
+> 200
+
+```json
+{
+  "trashed": true
+}
+```
+
+
+> 403
+
+```json
+{
+  "error": {
+    "message": "Permission denied.",
+    "status_code": 403
+  }
+}
+```
+
+> 404
+
+```json
+{
+  "error": {
+    "message": "Not found.",
+    "status_code": 404
+  }
+}
+```
+
+This resource trash selected question.
 
 ### HTTP Request
 
 `DELETE [BASE_URL]/questions/`**uuid**
 
-### URL Parameters
+### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
 
-### Request Header
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
+### HTTP Post Parameters
 
-`No request parameters required.`
-
-
-
+`No HTTP post parameters required.`
 
 
 
 
-## Restore
+
+
+## Untrash
 
 > 200
 
 ```json
 {
-  "id": 1,
-  "accountID": 1,
-  "ownerID": 1,
-  
-  "question": "What is API Documentation?",
-  "questionIsHTML": true,
-  "type": "mcqs",
-  "attachments": { },
-  "options": { },
-  "remarks": "Lorem Ipsum",
-  "tags": "Lorem Ipsum",
-  "canAllowStudentAttachments": true,
-  "dateCreated": "2018-05-25T06:01:04Z",
-  "lastModified": "2018-05-25T06:01:04Z",
-  
-  "regexRestriction": "32dfsvdsa234",
-  "settings": { },
-  "isRequired": true,
-    
-  "uuid": "d60629e6"
+    "data": {
+        "id": 6,
+        "accountID": 1,
+        "ownerID": 1,
+        "question": "<p>Why did the chicken cross the road?</p>",
+        "questionIsHTML": true,
+        "type": "mcqs",
+        "attachments": {
+            "test": true
+        },
+        "options": {
+            "test": true
+        },
+        "labels": null,
+        "remarks": "Notes",
+        "tags": null,
+        "canAllowStudentAttachments": 0,
+        "dateCreated": "2018-07-13T07:14:46Z",
+        "lastModified": "2018-07-19T06:19:14Z",
+        "regexRestriction": "Question #1",
+        "settings": {
+            "test": false
+        },
+        "isRequired": true,
+        "uuid": "afcbd354-f1a9-4f27-a915-32f59c5237e0",
+        "isArchived": false,
+        "isTrashed": false
+    }
 }
 ```
 
@@ -483,25 +640,25 @@ Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipisci
 }
 ```
 
-This resource restore archived question.
+This resource untrash trashed question.
 
 ### HTTP Request
 
 `GET [BASE_URL]/questions/`**uuid**`/restore`
 
-### URL Parameters
+### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
 
-### Request Header
+### Request Headers
 Key | Value | Description
 --------- | ------- | -----------
-Content-Type | application/json | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-Authorization | Bearer $token | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-### Request Parameters
+### HTTP Post Parameters
 
-`No request parameters required.`
+`No HTTP post parameters required.`

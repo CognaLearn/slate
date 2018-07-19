@@ -42,8 +42,43 @@ To support the objective of this documentation, here are the following prinicipl
 * **Base URL**
 
     `https://api3-dev.intedashboard.com/api/v1`
-    
+
+* **Standard HTTP Get Parameters** - These parameters are standard for all **list** resources.
+
+Parameter | Type | Description
+--------- | ------- | -----------
+`page` | **int** | Pagination page number.
+`per_page` | **int** | Constrains the number of rows returned.
+`sort` | **string** | Column name to be sorted.
+`order` | **string** | `ASC` or `DESC`
+
+* **Archived and Trashed Records** 
+
+<aside class="notice">
+By default, <b>archived</b> and <b>trashed</b> records are not included in returned list. To manage the data to be returned by <b>LIST</b> resource, following parameters can be used to show and hide archived and trashed records:
+<br/> <br/>
+
+<code>isArchived=*</code> <br/>
+Returns all records whether archived or not.<br/><br/>
+
+<code>isArchived=true</code> or <code>isArchived=1</code> <br/>
+Returns archived records only.<br/><br/>
+
+<code>isArchived=false</code> or <code>isArchived=0</code> <br/>
+Returns unarchived records only.<br/><br/>
+
+<code>isTrashed=*</code> <br/>
+Returns all records whether trashed or not.<br/><br/>
+
+<code>isTrashed=true</code> or <code>isTrashed=1</code> <br/>
+Returns trashed records only.<br/><br/>
+
+<code>isTrashed=false</code> or <code>isTrashed=0</code> <br/>
+Returns untrashed records only.<br/><br/>
+</aside>
+
 * **Default roles** - Super Admin, Account Admin, Teacher, and Student
+
 * **Super Admin User** - A permanent default user.
     * *identity* - bodwyer
     * *email* - brian@cognalearn.com
@@ -67,16 +102,6 @@ To support the objective of this documentation, here are the following prinicipl
     `your-local/roles/7a066d34-abb9-4874-8264-353e3bc451fd`
     
 * Email stored in **lumen.log** once account admin has been created during account creation.
-
-## Content [TO BE UPDATED]
-
-Items that are included in this document are the following:
-
-* Authentication and Token Generation
-* Role and Permission Management
-* Security Question Management
-* Account and User (Account Admin) Management
-* Profile Viewing
 
 
 
