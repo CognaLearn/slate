@@ -108,6 +108,25 @@ Returns untrashed records only.<br/><br/>
 
 
 
+## Unit Test
+Automated testing objective is to segregate each part of the program and test that the individual parts are working correctly. **InteDashboard™** provides unit tests to help users/developers better manage and control the following modules: 
+
+* **Course** - `CourseTest`
+    
+
+<aside class="notice">
+To run tests, run the following scripts in your terminal:
+
+<br/>
+<code>phpunit</code> - To run the entire tests.
+ 
+<br/>
+<code>phpunit --filter {TestMethodName}</code> - To run specific test. 
+</aside>
+
+
+
+
 # Authentication
 
 > To authorize, use this code:
