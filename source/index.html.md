@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - courses
+  - modules
   - questions
   - errors
 

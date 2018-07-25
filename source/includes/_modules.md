@@ -1,7 +1,7 @@
-# Courses
+# Modules
 
 <aside class="success">
-Resources related to <code>course management</code>.
+Resources related to <code>module management</code>.
 </aside>
 
 
@@ -17,24 +17,20 @@ Resources related to <code>course management</code>.
 {
     "data": [
         {
-            "id": 1,
+            "id": 2,
             "accountID": 2,
+            "courseID": 2,
             "ownerID": 2,
-            "description": "<p>Sample Description1</p>",
+            "description": "<p>Sample Description</p>",
             "descriptionIsHTML": true,
-            "consumerKeyLTI": "KSsFLCicxWQ7X9J1wHg0",
-            "sharedSecretLTI": "DiHguLhr1vj5TVwQNopc",
-            "code": "S-CODE-112",
-            "startDate": "2018-08-23T00:00:00Z",
-            "endDate": "2018-08-26T00:00:00Z",
+            "startDate": "2018-07-23T00:00:00Z",
+            "endDate": "2018-07-26T00:00:00Z",
             "isPublished": true,
-            "configURLLTI": "http://localhost:8041/lti/config/KSsFLCicxWQ7X9J1wHg0",
-            "launchURLLTI": "http://localhost:8041/lti/launch/KSsFLCicxWQ7X9J1wHg0",
-            "uuid": "de4d9088-1b6d-4080-ae7a-ec6b7bb8b101",
+            "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
             "isArchived": false,
             "isTrashed": false,
-            "dateCreated": "2018-07-23T10:30:43Z",
-            "lastModified": "2018-07-23T14:41:12Z"
+            "dateCreated": "2018-07-25T13:38:18Z",
+            "lastModified": "2018-07-25T13:53:45Z"
         }
     ],
     "meta": {
@@ -61,20 +57,20 @@ Resources related to <code>course management</code>.
 }
 ```
 
-This resource allows to list all courses.
+This resource allows to list all modules.
 
 
 
 
 ### HTTP Request
 
-`GET [BASE_URL]/courses`
+`GET [BASE_URL]/modules`
 
 ### HTTP Get Parameters
 
 [Standard HTTP Get Parameters](#principles)
 
-`i.e. [BASE_URL]/courses?page=1&per_page=3`
+`i.e. [BASE_URL]/modules?page=1&per_page=3`
 
 ### Request Headers
 Key | Value | Description
@@ -109,19 +105,14 @@ Key | Value | Description
         "ownerID": 2,
         "description": "<p>Sample Description</p>",
         "descriptionIsHTML": true,
-        "consumerKeyLTI": "7jaqP8ZSwsAXVfWM3emN",
-        "sharedSecretLTI": "pwWjBIslrRoq4vGxhU3f",
-        "code": "S-CODE-2",
         "startDate": "2018-07-23T00:00:00Z",
         "endDate": "2018-07-26T00:00:00Z",
         "isPublished": false,
-        "configURLLTI": "http://localhost:8041/lti/config/7jaqP8ZSwsAXVfWM3emN",
-        "launchURLLTI": "http://localhost:8041/lti/launch/7jaqP8ZSwsAXVfWM3emN",
-        "uuid": "d11281dd-8105-4d7a-a56a-9febeb16a215",
+        "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-24T05:32:48Z",
-        "lastModified": "2018-07-24T05:32:48Z"
+        "dateCreated": "2018-07-25T13:38:18Z",
+        "lastModified": "2018-07-25T13:38:18Z"
     }
 }
 ```
@@ -162,11 +153,11 @@ Key | Value | Description
 }
 ```
 
-This resource create new course.
+This resource create new module.
 
 ### HTTP Request
 
-`POST [BASE_URL]/courses`
+`POST [BASE_URL]/modules`
 
 ### HTTP Get Parameters
 
@@ -183,7 +174,7 @@ Key | Value | Description
 Parameter | Description
 --------- | -----------
 name <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-code| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+courseId <br /> `required`| **string** <br /> Selected course UUID.
 startDate <br /> `required`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 endDate <br /> `required`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
@@ -201,22 +192,18 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
     "data": {
         "id": 2,
         "accountID": 2,
+        "courseID": 2,
         "ownerID": 2,
         "description": "<p>Sample Description</p>",
         "descriptionIsHTML": true,
-        "consumerKeyLTI": "7jaqP8ZSwsAXVfWM3emN",
-        "sharedSecretLTI": "pwWjBIslrRoq4vGxhU3f",
-        "code": "S-CODE-2",
         "startDate": "2018-07-23T00:00:00Z",
         "endDate": "2018-07-26T00:00:00Z",
         "isPublished": true,
-        "configURLLTI": "http://localhost:8041/lti/config/7jaqP8ZSwsAXVfWM3emN",
-        "launchURLLTI": "http://localhost:8041/lti/launch/7jaqP8ZSwsAXVfWM3emN",
-        "uuid": "d11281dd-8105-4d7a-a56a-9febeb16a215",
+        "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-24T05:32:48Z",
-        "lastModified": "2018-07-24T05:32:48Z"
+        "dateCreated": "2018-07-25T13:38:18Z",
+        "lastModified": "2018-07-25T13:38:18Z"
     }
 }
 ```
@@ -243,17 +230,17 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 }
 ```
 
-This resource retrieve specific course.
+This resource retrieve specific module.
 
 ### HTTP Request
 
-`GET [BASE_URL]/courses/`**uuid**
+`GET [BASE_URL]/modules/`**uuid**
 
 ### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
-uuid | string | The generated UUID of the selected course.
+uuid | string | The generated UUID of the selected module.
 
 ### Request Headers
 Key | Value | Description
@@ -283,22 +270,18 @@ Key | Value | Description
     "data": {
         "id": 2,
         "accountID": 2,
+        "courseID": 2,
         "ownerID": 2,
         "description": "<p>Sample Description</p>",
         "descriptionIsHTML": true,
-        "consumerKeyLTI": "7jaqP8ZSwsAXVfWM3emN",
-        "sharedSecretLTI": "pwWjBIslrRoq4vGxhU3f",
-        "code": "S-CODE-2",
-        "startDate": "2018-08-23T00:00:00Z",
-        "endDate": "2018-08-26T00:00:00Z",
+        "startDate": "2018-07-23T00:00:00Z",
+        "endDate": "2018-07-26T00:00:00Z",
         "isPublished": true,
-        "configURLLTI": "http://localhost:8041/lti/config/7jaqP8ZSwsAXVfWM3emN",
-        "launchURLLTI": "http://localhost:8041/lti/launch/7jaqP8ZSwsAXVfWM3emN",
-        "uuid": "d11281dd-8105-4d7a-a56a-9febeb16a215",
+        "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-24T05:32:48Z",
-        "lastModified": "2018-07-24T05:42:01Z"
+        "dateCreated": "2018-07-25T13:38:18Z",
+        "lastModified": "2018-07-25T13:50:30Z"
     }
 }
 ```
@@ -339,17 +322,17 @@ Key | Value | Description
 }
 ```
 
-This resource update selected course.
+This resource update selected module.
 
 ### HTTP Request
 
-`PUT [BASE_URL]/courses/`**uuid**
+`PUT [BASE_URL]/modules/`**uuid**
 
 ### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
-uuid | string | The generated UUID of the selected course.
+uuid | string | The generated UUID of the selected module.
 
 ### Request Headers
 Key | Value | Description
@@ -362,7 +345,7 @@ Key | Value | Description
 Parameter | Description
 --------- | -----------
 name <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-code| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+courseId <br /> `required`| **string** <br /> Selected course UUID.
 startDate <br /> `required`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 endDate <br /> `required`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
@@ -392,22 +375,18 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
     "data": {
         "id": 2,
         "accountID": 2,
+        "courseID": 2,
         "ownerID": 2,
         "description": "<p>Sample Description</p>",
         "descriptionIsHTML": true,
-        "consumerKeyLTI": "7jaqP8ZSwsAXVfWM3emN",
-        "sharedSecretLTI": "pwWjBIslrRoq4vGxhU3f",
-        "code": "S-CODE-2",
-        "startDate": "2018-08-23T00:00:00Z",
-        "endDate": "2018-08-26T00:00:00Z",
+        "startDate": "2018-07-23T00:00:00Z",
+        "endDate": "2018-07-26T00:00:00Z",
         "isPublished": true,
-        "configURLLTI": "http://localhost:8041/lti/config/7jaqP8ZSwsAXVfWM3emN",
-        "launchURLLTI": "http://localhost:8041/lti/launch/7jaqP8ZSwsAXVfWM3emN",
-        "uuid": "d11281dd-8105-4d7a-a56a-9febeb16a215",
+        "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-24T05:32:48Z",
-        "lastModified": "2018-07-24T05:42:01Z"
+        "dateCreated": "2018-07-25T13:38:18Z",
+        "lastModified": "2018-07-25T13:50:30Z"
     }
 }
 ```
@@ -435,17 +414,17 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 }
 ```
 
-This resource archive/unarchive selected course.
+This resource archive/unarchive selected module.
 
 ### HTTP Request
 
-`PATCH [BASE_URL]/courses/`**uuid**
+`PATCH [BASE_URL]/modules/`**uuid**
 
 ### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
-uuid | string | The generated UUID of the selected course.
+uuid | string | The generated UUID of the selected module.
 
 ### Request Headers
 Key | Value | Description
@@ -499,17 +478,17 @@ Key | Value | Description
 }
 ```
 
-This resource trash selected course.
+This resource trash selected module.
 
 ### HTTP Request
 
-`DELETE [BASE_URL]/courses/`**uuid**
+`DELETE [BASE_URL]/modules/`**uuid**
 
 ### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
-uuid | string | The generated UUID of the selected course.
+uuid | string | The generated UUID of the selected module.
 
 ### Request Headers
 Key | Value | Description
@@ -536,22 +515,18 @@ Key | Value | Description
     "data": {
         "id": 2,
         "accountID": 2,
+        "courseID": 2,
         "ownerID": 2,
         "description": "<p>Sample Description</p>",
         "descriptionIsHTML": true,
-        "consumerKeyLTI": "7jaqP8ZSwsAXVfWM3emN",
-        "sharedSecretLTI": "pwWjBIslrRoq4vGxhU3f",
-        "code": "S-CODE-2",
-        "startDate": "2018-08-23T00:00:00Z",
-        "endDate": "2018-08-26T00:00:00Z",
+        "startDate": "2018-07-23T00:00:00Z",
+        "endDate": "2018-07-26T00:00:00Z",
         "isPublished": true,
-        "configURLLTI": "http://localhost:8041/lti/config/7jaqP8ZSwsAXVfWM3emN",
-        "launchURLLTI": "http://localhost:8041/lti/launch/7jaqP8ZSwsAXVfWM3emN",
-        "uuid": "d11281dd-8105-4d7a-a56a-9febeb16a215",
+        "uuid": "9050ff6f-ca67-4022-8552-57dc94f4533c",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-24T05:32:48Z",
-        "lastModified": "2018-07-24T05:42:01Z"
+        "dateCreated": "2018-07-25T13:38:18Z",
+        "lastModified": "2018-07-25T13:50:30Z"
     }
 }
 ```
@@ -578,17 +553,17 @@ Key | Value | Description
 }
 ```
 
-This resource untrash trashed course.
+This resource untrash trashed module.
 
 ### HTTP Request
 
-`GET [BASE_URL]/courses/`**uuid**`/restore`
+`GET [BASE_URL]/modules/`**uuid**`/restore`
 
 ### HTTP Get Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
-uuid | string | The generated UUID of the selected course.
+uuid | string | The generated UUID of the selected module.
 
 ### Request Headers
 Key | Value | Description
