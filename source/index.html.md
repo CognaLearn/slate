@@ -9,6 +9,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - accounts
   - courses
   - modules
   - questions
@@ -113,6 +114,7 @@ Returns untrashed records only.<br/><br/>
 Automated testing objective is to segregate each part of the program and test that the individual parts are working correctly. **InteDashboard™** provides unit tests to help users/developers better manage and control the following modules: 
 
 * **Course** - `CourseTest`
+* **Module** - `ModuleTest`
     
 
 <aside class="notice">
