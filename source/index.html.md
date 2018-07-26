@@ -9,6 +9,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - authentication
   - accounts
   - courses
   - modules
@@ -103,8 +104,6 @@ Returns untrashed records only.<br/><br/>
 * **UUID** property will be used as a reference id in URI
 
     `your-local/roles/7a066d34-abb9-4874-8264-353e3bc451fd`
-    
-* Email stored in **lumen.log** once account admin has been created during account creation.
 
 
 
@@ -126,48 +125,3 @@ To run tests, run the following scripts in your terminal:
 <br/>
 <code>phpunit --filter {TestMethodName}</code> - To run specific test. 
 </aside>
-
-
-
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `$token` with your personal token.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: Bearer $token`
-
-<aside class="notice">
-Replace <code>$token</code> with your personal token.
-</aside>
-
-
