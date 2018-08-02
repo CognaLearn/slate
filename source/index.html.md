@@ -10,6 +10,8 @@ toc_footers:
 
 includes:
   - authentication
+  - roles
+  - users
   - accounts
   - courses
   - modules
@@ -125,4 +127,21 @@ To run tests, run the following scripts in your terminal:
  
 <br/>
 <code>phpunit --filter {TestMethodName}</code> - To run specific test. 
+</aside>
+
+
+
+
+## Standard Roles
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed nibh nec tellus vestibulum commodo. Mauris tincidunt arcu id congue dapibus. Cras in odio nec elit viverra gravida. Phasellus placerat sed nulla eu gravida. Pellentesque ligula elit, dictum quis dictum quis, consequat sit amet justo.
+
+ID | Name | Description
+------- | ------- | -----------
+`1` | **Superuser** | People who work at CognaLearn.
+`2` | **Account Admin** | Every Account has an Admin Teacher who has full access to the Account.
+`3` | **Teacher** | Lorem ipsum dolor sit amet.
+`4` | **Student** | Lorem ipsum dolor sit amet.
+
+<aside class="notice">
+Each role has several permissions. To update the certain role with certain permissions, proceed to Roles.
 </aside>
