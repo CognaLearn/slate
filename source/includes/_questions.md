@@ -9,7 +9,7 @@ Resources related to <code>question builder management</code>.
 
 
 
-## List
+## List of Questions
 
 > 200
 
@@ -107,7 +107,7 @@ Key | Value | Description
 
 
 
-## Create
+## Create Question
 
 > 201
 
@@ -216,7 +216,7 @@ settings| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing eli
 
 
 
-## Retrieve
+## Retrieve Question
 
 > 200
 
@@ -306,7 +306,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update Question
 
 > 200
 
@@ -421,7 +421,7 @@ settings| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing eli
 
 
 
-## Archive
+## Archive/Unarchive  Question
 
 > 200 (Archived)
 
@@ -520,7 +520,7 @@ Key | Value | Description
 
 
 
-## Trash
+## Trash Question
 
 > 200
 
@@ -581,7 +581,7 @@ Key | Value | Description
 
 
 
-## Untrash
+## Untrash Question
 
 > 200
 

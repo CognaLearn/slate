@@ -9,7 +9,7 @@ Resources related to <code>course management</code>.
 
 
 
-## List
+## List of Courses
 
 > 200
 
@@ -97,7 +97,7 @@ Key | Value | Description
 
 
 
-## Create
+## Create Course
 
 > 201
 
@@ -192,7 +192,7 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 
 
-## Retrieve
+## Retrieve Course
 
 > 200
 
@@ -274,7 +274,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update Course
 
 > 200
 
@@ -375,7 +375,7 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 
 
-## Archive
+## Archive/Unarchive Course
 
 > 200 (Archived)
 
@@ -466,7 +466,7 @@ Key | Value | Description
 
 
 
-## Trash
+## Trash Course
 
 > 200
 
@@ -527,7 +527,7 @@ Key | Value | Description
 
 
 
-## Untrash
+## Untrash Course
 
 > 200
 

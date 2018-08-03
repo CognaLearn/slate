@@ -9,7 +9,7 @@ Resources related to <code>user management</code>.
 
 
 
-## List
+## List of Users
 
 > 200
 
@@ -103,7 +103,7 @@ Key | Value | Description
 
 
 
-## Create
+## Create User
 
 > 201
 
@@ -194,7 +194,7 @@ password_confirmation <br /> `required if isset(password)`| **string** <br /> Lo
 If <code>password</code> is not provided, activation link will be sent to the email.
 </aside>
 
-## Retrieve
+## Retrieve User
 
 > 200
 
@@ -276,7 +276,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update User
 
 > 200
 
@@ -381,7 +381,7 @@ isActive | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing
 
 
 
-## Archive
+## Archive/Unarchive User
 
 > 200 (Archived)
 
@@ -481,7 +481,7 @@ Key | Value | Description
 
 
 
-## Trash
+## Trash User
 
 > 200
 
@@ -542,7 +542,7 @@ Key | Value | Description
 
 
 
-## Untrash
+## Untrash User
 
 > 200
 

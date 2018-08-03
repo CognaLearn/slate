@@ -9,7 +9,7 @@ Resources related to <code>module management</code>.
 
 
 
-## List
+## List of Modules
 
 > 200
 
@@ -93,7 +93,7 @@ Key | Value | Description
 
 
 
-## Create
+## Create Module
 
 > 201
 
@@ -183,7 +183,7 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 
 
-## Retrieve
+## Retrieve Module
 
 > 200
 
@@ -261,7 +261,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update Module
 
 > 200
 
@@ -358,7 +358,7 @@ description| **json** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 
 
-## Archive
+## Archive/Unarchive Module
 
 > 200 (Archived)
 
@@ -445,7 +445,7 @@ Key | Value | Description
 
 
 
-## Trash
+## Trash Module
 
 > 200
 
@@ -506,7 +506,7 @@ Key | Value | Description
 
 
 
-## Untrash
+## Untrash Module
 
 > 200
 

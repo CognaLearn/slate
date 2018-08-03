@@ -9,7 +9,7 @@ Resources related to <code>account management</code>.
 
 
 
-## List
+## List of Accounts
 
 > 200
 
@@ -101,7 +101,7 @@ Key | Value | Description
 
 
 
-## Create
+## Create Account
 
 > 201
 
@@ -203,7 +203,7 @@ email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectet
 
 
 
-## Retrieve
+## Retrieve Account
 
 > 200
 
@@ -289,7 +289,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update Account
 
 > 200
 
@@ -394,7 +394,7 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 
 
-## Archive
+## Archive/Unarchive Account
 
 > 200 (Archived)
 
@@ -489,7 +489,7 @@ Key | Value | Description
 
 
 
-## Trash
+## Trash Account
 
 > 200
 
@@ -550,7 +550,7 @@ Key | Value | Description
 
 
 
-## Untrash
+## Untrash Account
 
 > 200
 

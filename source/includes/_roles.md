@@ -9,7 +9,7 @@ Resources related to <code>roles management</code>.
 
 
 
-## List
+## List of Roles
 
 > 200
 
@@ -130,7 +130,7 @@ Key | Value | Description
 
 
 
-## Retrieve
+## Retrieve Role
 
 > 200
 
@@ -212,7 +212,7 @@ Key | Value | Description
 
 
 
-## Update
+## Update Role
 
 > 200
 
