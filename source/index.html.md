@@ -10,6 +10,8 @@ toc_footers:
 
 includes:
   - authentication
+  - password
+  - profile
   - roles
   - users
   - accounts

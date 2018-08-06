@@ -162,7 +162,7 @@ Key | Value | Description
 {
   "message": "422 Unprocessable Entity",
   "errors": {
-    "identity": [
+    "account": [
       "The account field is required."
     ]
   },
@@ -200,6 +200,9 @@ identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consec
 email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
                 
 
+<aside class="info">
+When an Account is created by a Superuser and the Admin Teacher is created, the Admin Teacher receives an invitation email with a link for them to set their password and access their Account.
+</aside>
 
 
 
