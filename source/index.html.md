@@ -57,6 +57,7 @@ Parameter | Type | Description
 `per_page` | **int** | Constrains the number of rows returned.
 `sort` | **string** | Column name to be sorted.
 `order` | **string** | `ASC` or `DESC`
+`q` | **string** | Value to be searched.
 
 * **Archived and Trashed Records** 
 
