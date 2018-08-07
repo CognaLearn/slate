@@ -58,9 +58,9 @@ email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectet
 
 An email with a link to a password reset form is sent. The User resets his/her password using [Verify Account](#verify-account).
 
-
-
-
+<aside class="warning">
+If a user’s password is not changed after a certain period of time set by the admin (e.g., 80 days) an email reminder will be sent to the user daily until the allowable validity of password reset (e.g., 90 days), along with a link to reset the user's password. Day after the allowable validity of password reset, the system will no longer acknowledge the old password.
+</aside>
 
 
 
