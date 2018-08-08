@@ -236,11 +236,13 @@ This resource retrieve specific module.
 
 `GET [BASE_URL]/modules/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected module.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -328,11 +330,13 @@ This resource update selected module.
 
 `PUT [BASE_URL]/modules/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected module.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -420,11 +424,13 @@ This resource archive/unarchive selected module.
 
 `PATCH [BASE_URL]/modules/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected module.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -484,11 +490,13 @@ This resource trash selected module.
 
 `DELETE [BASE_URL]/modules/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected module.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -559,11 +567,13 @@ This resource untrash trashed module.
 
 `GET [BASE_URL]/modules/`**uuid**`/restore`
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected module.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

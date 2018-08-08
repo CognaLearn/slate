@@ -15,6 +15,7 @@ includes:
   - roles
   - users
   - accounts
+  - account-users
   - courses
   - modules
   - questions

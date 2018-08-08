@@ -281,11 +281,13 @@ This resource retrieve specific question.
 
 `GET [BASE_URL]/questions/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -385,11 +387,13 @@ This resource update selected question.
 
 `PUT [BASE_URL]/questions/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -495,11 +499,13 @@ This resource archive/unarchive selected question.
 
 `PATCH [BASE_URL]/questions/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -559,11 +565,13 @@ This resource trash selected question.
 
 `DELETE [BASE_URL]/questions/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -646,11 +654,13 @@ This resource untrash trashed question.
 
 `GET [BASE_URL]/questions/`**uuid**`/restore`
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected question.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

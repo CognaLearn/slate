@@ -249,11 +249,13 @@ This resource retrieve specific course.
 
 `GET [BASE_URL]/courses/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected course.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -345,11 +347,13 @@ This resource update selected course.
 
 `PUT [BASE_URL]/courses/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected course.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -441,11 +445,13 @@ This resource archive/unarchive selected course.
 
 `PATCH [BASE_URL]/courses/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected course.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -505,11 +511,13 @@ This resource trash selected course.
 
 `DELETE [BASE_URL]/courses/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected course.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -584,11 +592,13 @@ This resource untrash trashed course.
 
 `GET [BASE_URL]/courses/`**uuid**`/restore`
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected course.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

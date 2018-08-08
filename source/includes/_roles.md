@@ -187,11 +187,13 @@ This resource retrieve specific role.
 
 `GET [BASE_URL]/roles/`**uuid**
 
+URI Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account.
+
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected role.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -283,11 +285,13 @@ This resource update selected roole.
 
 `PUT [BASE_URL]/accounts/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

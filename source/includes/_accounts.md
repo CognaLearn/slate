@@ -267,11 +267,13 @@ This resource retrieve specific account.
 
 `GET [BASE_URL]/accounts/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -367,11 +369,13 @@ This resource update selected account.
 
 `PUT [BASE_URL]/accounts/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -385,8 +389,8 @@ Parameter | Description
 --------- | -----------
 accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-paymentMethod <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentMethod <br /> `required`| **enum[string]** <br /> `Demo, Trial, Paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> `Institution, Student-paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 isActive| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 isPaid| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 isGeneric| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
@@ -467,11 +471,13 @@ This resource archive/unarchive selected account.
 
 `PATCH [BASE_URL]/accounts/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -531,11 +537,13 @@ This resource trash selected account.
 
 `DELETE [BASE_URL]/accounts/`**uuid**
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -614,11 +622,13 @@ This resource untrash trashed account.
 
 `GET [BASE_URL]/accounts/`**uuid**`/restore`
 
-### HTTP Get Parameters
-
-Parameter | Type | Description
+URI Parameter | Type | Description
 --------- | ------- | -----------
 uuid | string | The generated UUID of the selected account.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

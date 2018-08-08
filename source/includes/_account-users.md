@@ -1,7 +1,7 @@
-# Users
+# Account Users
 
 <aside class="success">
-Resources related to <code>user management</code>.
+Resources related to <code>account user management</code>.
 </aside>
 
 
@@ -9,7 +9,7 @@ Resources related to <code>user management</code>.
 
 
 
-## List of Users
+## List of Account Users
 
 > 200
 
@@ -17,24 +17,28 @@ Resources related to <code>user management</code>.
 {
     "data": [
         {
-            "account": null,
-            "identity": "bodwyer",
-            "email": "brian@cognalearn.com",
-            "firstname": "Brian",
-            "lastname": "O’Dwyer",
-            "displayName": "",
+            "id": 2,
+            "accountName": "sample-account",
+            "organisationName": "Sample Account",
+            "paymentMethod": "Free",
+            "type": "Free",
             "isActive": false,
-            "isDeletable": false,
-            "roleId": 1,
-            "role": "Superuser",
-            "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
+            "isPaid": false,
+            "isGeneric": false,
+            "expiryDate": null,
+            "dateExpired": null,
+            "uuid": "5355b648-e5bb-4639-b868-b455be661318",
             "isArchived": false,
             "isTrashed": false,
-            "dateCreated": null,
-            "createBy": null,
-            "lastModified": "2018-08-02T05:09:21Z",
-            "lastUpdatedBy": null,
-            "authorisations": []
+            "dateCreated": "2018-07-23T09:34:52Z",
+            "lastModified": "2018-07-23T09:34:52Z",
+            "accountAdmins": [
+                {
+                    "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                    "identity": "mbsoliven",
+                    "displayName": "Michael Angelo Soliven"
+                }
+            ]
         }
     ],
     "meta": {
@@ -61,26 +65,29 @@ Resources related to <code>user management</code>.
 }
 ```
 
-This resource allows to list all users.
+This resource allows to list all account users.
 
 
 
 
 ### HTTP Request
 
-`GET [BASE_URL]/users`
+`GET [BASE_URL]/accounts/`**account-uuid**
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected user.
 
 ### HTTP Get Parameters
 
 [Standard HTTP Get Parameters](#principles)
 
-`i.e. [BASE_URL]/users?page=1&per_page=3`
+`i.e. [BASE_URL]/accounts?page=1&per_page=3`
 
 #### Additional Get Parameters
 Parameter | Type | Description
 --------- | ------- | -----------
 `role` | **int or string** | Role ID or name listed [above](#standard-roles).
-
 
 ### Request Headers
 Key | Value | Description
@@ -103,7 +110,7 @@ Key | Value | Description
 
 
 
-## Create User
+## Create Account User
 
 > 201
 
@@ -111,8 +118,8 @@ Key | Value | Description
 {
     "data": {
         "id": 2,
-        "userName": "sample-user",
-        "organisationName": "Sample User",
+        "accountName": "sample-account",
+        "organisationName": "Sample Account",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -125,7 +132,7 @@ Key | Value | Description
         "isTrashed": false,
         "dateCreated": "2018-07-23T09:34:52Z",
         "lastModified": "2018-07-23T09:34:52Z",
-        "userAdmins": [
+        "accountAdmins": [
             {
                 "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
                 "identity": "mbsoliven",
@@ -147,6 +154,207 @@ Key | Value | Description
 }
 ```
 
+> 404
+
+```json
+{
+  "error": {
+    "message": "No account attached to user.",
+    "status_code": 404
+  }
+}
+```
+
+> 422
+
+```json
+{
+  "message": "422 Unprocessable Entity",
+  "errors": {
+    "account": [
+      "The account field is required."
+    ]
+  },
+  "status_code": 422
+}
+```
+
+This resource create new account user.
+
+### HTTP Request
+
+`POST [BASE_URL]/accounts`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentMethod <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+                
+
+<aside class="info">
+When an Account is created by a Superuser and the Admin Teacher is created, the Admin Teacher receives an invitation email with a link for them to set their password and access their Account.
+</aside>
+
+
+
+## Retrieve Account User
+
+> 200
+
+```json
+{
+    "data": {
+        "id": 2,
+        "accountName": "sample-account",
+        "organisationName": "Sample Account",
+        "paymentMethod": "Free",
+        "type": "Free",
+        "isActive": false,
+        "isPaid": false,
+        "isGeneric": false,
+        "expiryDate": null,
+        "dateExpired": null,
+        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isArchived": false,
+        "isTrashed": false,
+        "dateCreated": "2018-07-23T09:34:52Z",
+        "lastModified": "2018-07-23T09:34:52Z",
+        "accountAdmins": [
+            {
+                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "identity": "mbsoliven",
+                "displayName": "Michael Angelo Soliven"
+            }
+        ]
+    }
+}
+```
+
+> 403
+
+```json
+{
+  "error": {
+    "message": "Permission denied.",
+    "status_code": 403
+  }
+}
+```
+
+> 404
+
+```json
+{
+  "error": {
+    "message": "Not found.",
+    "status_code": 404
+  }
+}
+```
+
+This resource retrieve specific account user.
+
+### HTTP Request
+
+`GET [BASE_URL]/accounts/`**uuid**
+
+### HTTP Get Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account user.
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+
+`No HTTP post parameters required.`
+
+
+
+
+
+
+
+
+
+## Update Account User
+
+> 200
+
+```json
+{
+    "data": {
+        "id": 2,
+        "accountName": "sample-account",
+        "organisationName": "Sample Account",
+        "paymentMethod": "Free",
+        "type": "Free",
+        "isActive": false,
+        "isPaid": false,
+        "isGeneric": false,
+        "expiryDate": null,
+        "dateExpired": null,
+        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isArchived": false,
+        "isTrashed": false,
+        "dateCreated": "2018-07-23T09:34:52Z",
+        "lastModified": "2018-07-23T09:34:52Z",
+        "accountAdmins": [
+            {
+                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "identity": "mbsoliven",
+                "displayName": "Michael Angelo Soliven"
+            }
+        ]
+    }
+}
+```
+
+> 403
+
+```json
+{
+  "error": {
+    "message": "Permission denied.",
+    "status_code": 403
+  }
+}
+```
+
+> 404
+
+```json
+{
+  "error": {
+    "message": "Not found.",
+    "status_code": 404
+  }
+}
+```
 
 > 422
 
@@ -155,22 +363,24 @@ Key | Value | Description
   "message": "422 Unprocessable Entity",
   "errors": {
     "identity": [
-      "The identity field is required."
+      "The account field is required."
     ]
   },
   "status_code": 422
 }
 ```
 
-This resource create new user.
+This resource update selected account user.
 
 ### HTTP Request
 
-`POST [BASE_URL]/users`
+`PUT [BASE_URL]/accounts/`**uuid**
 
 ### HTTP Get Parameters
 
-`No HTTP get parameters required.`
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account user.
 
 ### Request Headers
 Key | Value | Description
@@ -182,210 +392,21 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-roleId <br /> `required`| **int** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-accountUuid <br /> `required if roleId != 1`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-password | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-password_confirmation <br /> `required if isset(password)`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.                
-
-<aside class="notice">
-If <code>password</code> is not provided, activation link will be sent to the email.
-</aside>
-
-## Retrieve User
-
-> 200
-
-```json
-{
-    "data": {
-        "account": null,
-        "identity": "bodwyer",
-        "email": "brian@cognalearn.com",
-        "firstname": "Brian",
-        "lastname": "O’Dwyer",
-        "displayName": "",
-        "isActive": false,
-        "isDeletable": false,
-        "roleId": 1,
-        "role": "Superuser",
-        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
-        "isArchived": false,
-        "isTrashed": false,
-        "dateCreated": null,
-        "createBy": null,
-        "lastModified": "2018-08-02T05:09:21Z",
-        "lastUpdatedBy": null,
-        "authorisations": []
-    }
-}
-```
-
-> 403
-
-```json
-{
-  "error": {
-    "message": "Permission denied.",
-    "status_code": 403
-  }
-}
-```
-
-> 404
-
-```json
-{
-  "error": {
-    "message": "Not found.",
-    "status_code": 404
-  }
-}
-```
-
-This resource retrieve specific user.
-
-### HTTP Request
-
-`GET [BASE_URL]/users/`**uuid**
-
-URI Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected user.
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
-
-### Request Headers
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-
-### HTTP Post Parameters
-
-`No HTTP post parameters required.`
+accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentMethod <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isActive| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isPaid| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isGeneric| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 
 
 
 
 
 
-
-
-
-## Update User
-
-> 200
-
-```json
-{
-    "data": {
-        "id": 2,
-        "userName": "sample-user",
-        "organisationName": "Sample User",
-        "paymentMethod": "Free",
-        "type": "Free",
-        "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
-        "isArchived": false,
-        "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "userAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
-    }
-}
-```
-
-> 403
-
-```json
-{
-  "error": {
-    "message": "Permission denied.",
-    "status_code": 403
-  }
-}
-```
-
-> 404
-
-```json
-{
-  "error": {
-    "message": "Not found.",
-    "status_code": 404
-  }
-}
-```
-
-> 422
-
-```json
-{
-  "message": "422 Unprocessable Entity",
-  "errors": {
-    "accountUuid": [
-      "The account uuid field is required."
-    ]
-  },
-  "status_code": 422
-}
-```
-
-This resource update selected user.
-
-### HTTP Request
-
-`PUT [BASE_URL]/users/`**uuid**
-
-URI Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected user.
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
-
-### Request Headers
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-
-### HTTP Post Parameters
-Parameter | Description
---------- | -----------
-identity | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-email | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-firstname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-roleId | **int** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-accountUuid <br /> `required if roleId != 1`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-password | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-password_confirmation <br /> `required if isset(password)`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isActive | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-
-
-
-
-
-
-## Archive/Unarchive User
+## Archive/Unarchive Account User
 
 > 200 (Archived)
 
@@ -400,32 +421,27 @@ isActive | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing
 ```json
 {
     "data": {
-        "account": null,
-        "identity": "accountadmin3",
-        "email": "accountadmin3@gmail.com",
-        "firstname": "Super User 2",
-        "lastname": null,
-        "displayName": "Account Admin 3",
+        "id": 2,
+        "accountName": "sample-account",
+        "organisationName": "Sample Account",
+        "paymentMethod": "Free",
+        "type": "Free",
         "isActive": false,
-        "isDeletable": true,
-        "roleId": 2,
-        "role": "Account Admin",
-        "uuid": "4e4062a0-ee60-4612-88a3-aa9075d4028a",
+        "isPaid": false,
+        "isGeneric": false,
+        "expiryDate": null,
+        "dateExpired": null,
+        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-01T10:00:22Z",
-        "createBy": "Brian O’Dwyer",
-        "lastModified": "2018-08-02T06:12:00Z",
-        "lastUpdatedBy": "Brian O’Dwyer",
-        "authorisations": [
-            "App\\Http\\Controllers\\RouterController@index",
-            "App\\Http\\Controllers\\UserController@index",
-            "App\\Http\\Controllers\\UserController@store",
-            "App\\Http\\Controllers\\UserController@show",
-            "App\\Http\\Controllers\\UserController@update",
-            "App\\Http\\Controllers\\UserController@archive",
-            "App\\Http\\Controllers\\UserController@destroy",
-            "App\\Http\\Controllers\\UserController@restore"
+        "dateCreated": "2018-07-23T09:34:52Z",
+        "lastModified": "2018-07-23T09:34:52Z",
+        "accountAdmins": [
+            {
+                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "identity": "mbsoliven",
+                "displayName": "Michael Angelo Soliven"
+            }
         ]
     }
 }
@@ -454,19 +470,17 @@ isActive | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing
 }
 ```
 
-This resource archive/unarchive selected user.
+This resource archive/unarchive selected account user.
 
 ### HTTP Request
 
-`PATCH [BASE_URL]/users/`**uuid**
-
-URI Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected user.
+`PATCH [BASE_URL]/accounts/`**uuid**
 
 ### HTTP Get Parameters
 
-`No HTTP get parameters required.`
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account user.
 
 ### Request Headers
 Key | Value | Description
@@ -487,7 +501,7 @@ Key | Value | Description
 
 
 
-## Trash User
+## Trash Account User
 
 > 200
 
@@ -520,19 +534,17 @@ Key | Value | Description
 }
 ```
 
-This resource trash selected user.
+This resource trash selected account user.
 
 ### HTTP Request
 
-`DELETE [BASE_URL]/users/`**uuid**
-
-URI Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected user.
+`DELETE [BASE_URL]/accounts/`**uuid**
 
 ### HTTP Get Parameters
 
-`No HTTP get parameters required.`
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account user.
 
 ### Request Headers
 Key | Value | Description
@@ -550,39 +562,34 @@ Key | Value | Description
 
 
 
-## Untrash User
+## Untrash Account User
 
 > 200
 
 ```json
 {
     "data": {
-        "account": null,
-        "identity": "accountadmin3",
-        "email": "accountadmin3@gmail.com",
-        "firstname": "Super User 2",
-        "lastname": null,
-        "displayName": "Account Admin 3",
+        "id": 2,
+        "accountName": "sample-account",
+        "organisationName": "Sample Account",
+        "paymentMethod": "Free",
+        "type": "Free",
         "isActive": false,
-        "isDeletable": true,
-        "roleId": 2,
-        "role": "Account Admin",
-        "uuid": "4e4062a0-ee60-4612-88a3-aa9075d4028a",
+        "isPaid": false,
+        "isGeneric": false,
+        "expiryDate": null,
+        "dateExpired": null,
+        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-01T10:00:22Z",
-        "createBy": "Brian O’Dwyer",
-        "lastModified": "2018-08-02T06:12:35Z",
-        "lastUpdatedBy": "Brian O’Dwyer",
-        "authorisations": [
-            "App\\Http\\Controllers\\RouterController@index",
-            "App\\Http\\Controllers\\UserController@index",
-            "App\\Http\\Controllers\\UserController@store",
-            "App\\Http\\Controllers\\UserController@show",
-            "App\\Http\\Controllers\\UserController@update",
-            "App\\Http\\Controllers\\UserController@archive",
-            "App\\Http\\Controllers\\UserController@destroy",
-            "App\\Http\\Controllers\\UserController@restore"
+        "dateCreated": "2018-07-23T09:34:52Z",
+        "lastModified": "2018-07-23T09:34:52Z",
+        "accountAdmins": [
+            {
+                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "identity": "mbsoliven",
+                "displayName": "Michael Angelo Soliven"
+            }
         ]
     }
 }
@@ -610,19 +617,17 @@ Key | Value | Description
 }
 ```
 
-This resource untrash trashed user.
+This resource untrash trashed account user.
 
 ### HTTP Request
 
-`GET [BASE_URL]/users/`**uuid**`/restore`
-
-URI Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected user.
+`GET [BASE_URL]/accounts/`**uuid**`/restore`
 
 ### HTTP Get Parameters
 
-`No HTTP get parameters required.`
+Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected account user.
 
 ### Request Headers
 Key | Value | Description
