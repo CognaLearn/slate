@@ -17,28 +17,24 @@ Resources related to <code>account user management</code>.
 {
     "data": [
         {
-            "id": 2,
-            "accountName": "sample-account",
-            "organisationName": "Sample Account",
-            "paymentMethod": "Free",
-            "type": "Free",
+            "account": null,
+            "identity": "bodwyer",
+            "email": "brian@cognalearn.com",
+            "firstname": "Brian",
+            "lastname": "O’Dwyer",
+            "displayName": "",
             "isActive": false,
-            "isPaid": false,
-            "isGeneric": false,
-            "expiryDate": null,
-            "dateExpired": null,
-            "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+            "isDeletable": false,
+            "roleId": 1,
+            "role": "Account Admin",
+            "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
             "isArchived": false,
             "isTrashed": false,
-            "dateCreated": "2018-07-23T09:34:52Z",
-            "lastModified": "2018-07-23T09:34:52Z",
-            "accountAdmins": [
-                {
-                    "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                    "identity": "mbsoliven",
-                    "displayName": "Michael Angelo Soliven"
-                }
-            ]
+            "dateCreated": null,
+            "createBy": null,
+            "lastModified": "2018-08-02T05:09:21Z",
+            "lastUpdatedBy": null,
+            "authorisations": []
         }
     ],
     "meta": {
@@ -54,12 +50,26 @@ Resources related to <code>account user management</code>.
 }
 ```
 
+> 404
+
+```json
+{
+  "error": {
+    "message": "Not found.",
+    "status_code": 404
+  }
+}
+```
+
 > 403
 
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -72,11 +82,11 @@ This resource allows to list all account users.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**account-uuid**
+`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
-account-uuid | string | The generated UUID of the selected user.
+account-uuid | string | The generated UUID of the selected account.
 
 ### HTTP Get Parameters
 
@@ -117,28 +127,24 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
-        "paymentMethod": "Free",
-        "type": "Free",
+        "account": null,
+        "identity": "bodwyer",
+        "email": "brian@cognalearn.com",
+        "firstname": "Brian",
+        "lastname": "O’Dwyer",
+        "displayName": "",
         "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isDeletable": false,
+        "roleId": 1,
+        "role": "Superuser",
+        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "accountAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
+        "dateCreated": null,
+        "createBy": null,
+        "lastModified": "2018-08-02T05:09:21Z",
+        "lastUpdatedBy": null,
+        "authorisations": []
     }
 }
 ```
@@ -148,19 +154,11 @@ Key | Value | Description
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
-  }
-}
-```
-
-> 404
-
-```json
-{
-  "error": {
-    "message": "No account attached to user.",
-    "status_code": 404
   }
 }
 ```
@@ -171,8 +169,8 @@ Key | Value | Description
 {
   "message": "422 Unprocessable Entity",
   "errors": {
-    "account": [
-      "The account field is required."
+    "email": [
+      "The email field is required."
     ]
   },
   "status_code": 422
@@ -183,7 +181,11 @@ This resource create new account user.
 
 ### HTTP Request
 
-`POST [BASE_URL]/accounts`
+`POST [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
 
 ### HTTP Get Parameters
 
@@ -199,18 +201,16 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-paymentMethod <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+accountType <br /> `required`| **enum[string]** <br /> `Admin, Full Access, Read Only` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+roleId <br /> `required`| **int** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
                 
 
 <aside class="info">
-When an Account is created by a Superuser and the Admin Teacher is created, the Admin Teacher receives an invitation email with a link for them to set their password and access their Account.
+When an Account is created, the User receives an invitation email with a link for them to set their password and access their Account.
 </aside>
 
 
@@ -222,28 +222,24 @@ When an Account is created by a Superuser and the Admin Teacher is created, the 
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
-        "paymentMethod": "Free",
-        "type": "Free",
+        "account": null,
+        "identity": "bodwyer",
+        "email": "brian@cognalearn.com",
+        "firstname": "Brian",
+        "lastname": "O’Dwyer",
+        "displayName": "",
         "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isDeletable": false,
+        "roleId": 1,
+        "role": "Superuser",
+        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "accountAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
+        "dateCreated": null,
+        "createBy": null,
+        "lastModified": "2018-08-02T05:09:21Z",
+        "lastUpdatedBy": null,
+        "authorisations": []
     }
 }
 ```
@@ -253,7 +249,10 @@ When an Account is created by a Superuser and the Admin Teacher is created, the 
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -274,13 +273,16 @@ This resource retrieve specific account user.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**uuid**
+`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
+uuid | string | The generated UUID of the selected account user.
 
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected account user.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -308,28 +310,24 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
-        "paymentMethod": "Free",
-        "type": "Free",
+        "account": null,
+        "identity": "bodwyer",
+        "email": "brian@cognalearn.com",
+        "firstname": "Brian",
+        "lastname": "O’Dwyer",
+        "displayName": "",
         "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isDeletable": false,
+        "roleId": 1,
+        "role": "Superuser",
+        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "accountAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
+        "dateCreated": null,
+        "createBy": null,
+        "lastModified": "2018-08-02T05:09:21Z",
+        "lastUpdatedBy": null,
+        "authorisations": []
     }
 }
 ```
@@ -339,7 +337,10 @@ Key | Value | Description
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -362,8 +363,8 @@ Key | Value | Description
 {
   "message": "422 Unprocessable Entity",
   "errors": {
-    "identity": [
-      "The account field is required."
+    "email": [
+      "The email has already been taken."
     ]
   },
   "status_code": 422
@@ -374,13 +375,16 @@ This resource update selected account user.
 
 ### HTTP Request
 
-`PUT [BASE_URL]/accounts/`**uuid**
+`PUT [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
+uuid | string | The generated UUID of the selected account user.
 
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected account user.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -392,14 +396,12 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-paymentMethod <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type <br /> `required`| **enum[string]** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isActive| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isPaid| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isGeneric| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+accountType <br /> `required`| **enum[string]** <br /> `Admin, Full Access, Read Only` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+roleId <br /> `required`| **int** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 
 
 
@@ -421,28 +423,24 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
-        "paymentMethod": "Free",
-        "type": "Free",
+        "account": null,
+        "identity": "bodwyer",
+        "email": "brian@cognalearn.com",
+        "firstname": "Brian",
+        "lastname": "O’Dwyer",
+        "displayName": "",
         "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isDeletable": false,
+        "roleId": 1,
+        "role": "Superuser",
+        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "accountAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
+        "dateCreated": null,
+        "createBy": null,
+        "lastModified": "2018-08-02T05:09:21Z",
+        "lastUpdatedBy": null,
+        "authorisations": []
     }
 }
 ```
@@ -453,7 +451,10 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -474,13 +475,16 @@ This resource archive/unarchive selected account user.
 
 ### HTTP Request
 
-`PATCH [BASE_URL]/accounts/`**uuid**
+`PATCH [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
+uuid | string | The generated UUID of the selected account user.
 
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected account user.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -517,7 +521,10 @@ Key | Value | Description
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -538,13 +545,16 @@ This resource trash selected account user.
 
 ### HTTP Request
 
-`DELETE [BASE_URL]/accounts/`**uuid**
+`DELETE [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
+uuid | string | The generated UUID of the selected account user.
 
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected account user.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description
@@ -569,28 +579,24 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
-        "paymentMethod": "Free",
-        "type": "Free",
+        "account": null,
+        "identity": "bodwyer",
+        "email": "brian@cognalearn.com",
+        "firstname": "Brian",
+        "lastname": "O’Dwyer",
+        "displayName": "",
         "isActive": false,
-        "isPaid": false,
-        "isGeneric": false,
-        "expiryDate": null,
-        "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "isDeletable": false,
+        "roleId": 1,
+        "role": "Superuser",
+        "uuid": "06999d47-4dcb-4c9e-9c21-2f88d9c1b06d",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
-        "accountAdmins": [
-            {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
-                "identity": "mbsoliven",
-                "displayName": "Michael Angelo Soliven"
-            }
-        ]
+        "dateCreated": null,
+        "createBy": null,
+        "lastModified": "2018-08-02T05:09:21Z",
+        "lastUpdatedBy": null,
+        "authorisations": []
     }
 }
 ```
@@ -600,7 +606,10 @@ Key | Value | Description
 ```json
 {
   "error": {
-    "message": "Permission denied.",
+    "message": [
+      "Permission denied.",
+      "Ownership denied."
+    ],
     "status_code": 403
   }
 }
@@ -621,13 +630,16 @@ This resource untrash trashed account user.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**uuid**`/restore`
+`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**`/restore`
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+account-uuid | string | The generated UUID of the selected account.
+uuid | string | The generated UUID of the selected account user.
 
 ### HTTP Get Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-uuid | string | The generated UUID of the selected account user.
+`No HTTP get parameters required.`
 
 ### Request Headers
 Key | Value | Description

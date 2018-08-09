@@ -17,9 +17,9 @@ Resources related to <code>account management</code>.
 {
     "data": [
         {
-            "id": 2,
-            "accountName": "sample-account",
-            "organisationName": "Sample Account",
+            "id": 1,
+            "accountName": "sample-account1",
+            "organisationName": "Sample Account 1",
             "paymentMethod": "Free",
             "type": "Free",
             "isActive": false,
@@ -27,24 +27,62 @@ Resources related to <code>account management</code>.
             "isGeneric": false,
             "expiryDate": null,
             "dateExpired": null,
-            "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+            "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
             "isArchived": false,
             "isTrashed": false,
-            "dateCreated": "2018-07-23T09:34:52Z",
-            "lastModified": "2018-07-23T09:34:52Z",
+            "dateCreated": "2018-08-07T05:57:06Z",
+            "lastModified": "2018-08-07T05:57:06Z",
             "accountAdmins": [
                 {
-                    "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                    "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                     "identity": "mbsoliven",
+                    "email": "ninomichaelangelosoliven@gmail.com",
+                    "firstname": "Michael Angelo",
+                    "lastname": "Soliven",
                     "displayName": "Michael Angelo Soliven"
+                },
+                {
+                    "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                    "identity": "jseet",
+                    "email": "jolene@intedashboard.com",
+                    "firstname": "Joleen",
+                    "lastname": "Seet",
+                    "displayName": "Joleen"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "accountName": "sample-account2",
+            "organisationName": "Sample Account 2",
+            "paymentMethod": "Free",
+            "type": "Free",
+            "isActive": false,
+            "isPaid": false,
+            "isGeneric": false,
+            "expiryDate": null,
+            "dateExpired": null,
+            "uuid": "45c69f06-edb2-4533-9dcd-a028ee1752b6",
+            "isArchived": false,
+            "isTrashed": false,
+            "dateCreated": "2018-08-07T08:54:15Z",
+            "lastModified": "2018-08-07T08:54:15Z",
+            "accountAdmins": [
+                {
+                    "uuid": "b2601c58-f7eb-47fb-8c47-390389731bd9",
+                    "identity": "mbsoliven2",
+                    "email": "ninomichaelangelosoliven2@gmail.com",
+                    "firstname": "Michael Angelo 2",
+                    "lastname": "Soliven",
+                    "displayName": "Michael Angelo 2 Soliven"
                 }
             ]
         }
     ],
     "meta": {
         "pagination": {
-            "total": 1,
-            "count": 1,
+            "total": 2,
+            "count": 2,
             "per_page": 10,
             "current_page": 1,
             "total_pages": 1,
@@ -108,9 +146,9 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
+        "id": 1,
+        "accountName": "sample-account1",
+        "organisationName": "Sample Account 1",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -118,16 +156,27 @@ Key | Value | Description
         "isGeneric": false,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
+        "dateCreated": "2018-08-07T05:57:06Z",
+        "lastModified": "2018-08-07T05:57:06Z",
         "accountAdmins": [
             {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                 "identity": "mbsoliven",
+                "email": "ninomichaelangelosoliven@gmail.com",
+                "firstname": "Michael Angelo",
+                "lastname": "Soliven",
                 "displayName": "Michael Angelo Soliven"
+            },
+            {
+                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                "identity": "jseet",
+                "email": "jolene@intedashboard.com",
+                "firstname": "Joleen",
+                "lastname": "Seet",
+                "displayName": "Joleen"
             }
         ]
     }
@@ -213,9 +262,9 @@ When an Account is created by a Superuser and the Admin Teacher is created, the 
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
+        "id": 1,
+        "accountName": "sample-account1",
+        "organisationName": "Sample Account 1",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -223,16 +272,27 @@ When an Account is created by a Superuser and the Admin Teacher is created, the 
         "isGeneric": false,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
+        "dateCreated": "2018-08-07T05:57:06Z",
+        "lastModified": "2018-08-07T05:57:06Z",
         "accountAdmins": [
             {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                 "identity": "mbsoliven",
+                "email": "ninomichaelangelosoliven@gmail.com",
+                "firstname": "Michael Angelo",
+                "lastname": "Soliven",
                 "displayName": "Michael Angelo Soliven"
+            },
+            {
+                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                "identity": "jseet",
+                "email": "jolene@intedashboard.com",
+                "firstname": "Joleen",
+                "lastname": "Seet",
+                "displayName": "Joleen"
             }
         ]
     }
@@ -301,9 +361,9 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
+        "id": 1,
+        "accountName": "sample-account1",
+        "organisationName": "Sample Account 1",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -311,16 +371,27 @@ Key | Value | Description
         "isGeneric": false,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
+        "dateCreated": "2018-08-07T05:57:06Z",
+        "lastModified": "2018-08-07T05:57:06Z",
         "accountAdmins": [
             {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                 "identity": "mbsoliven",
+                "email": "ninomichaelangelosoliven@gmail.com",
+                "firstname": "Michael Angelo",
+                "lastname": "Soliven",
                 "displayName": "Michael Angelo Soliven"
+            },
+            {
+                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                "identity": "jseet",
+                "email": "jolene@intedashboard.com",
+                "firstname": "Joleen",
+                "lastname": "Seet",
+                "displayName": "Joleen"
             }
         ]
     }
@@ -416,9 +487,9 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
+        "id": 1,
+        "accountName": "sample-account1",
+        "organisationName": "Sample Account 1",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -426,16 +497,27 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
         "isGeneric": false,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
+        "dateCreated": "2018-08-07T05:57:06Z",
+        "lastModified": "2018-08-07T05:57:06Z",
         "accountAdmins": [
             {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                 "identity": "mbsoliven",
+                "email": "ninomichaelangelosoliven@gmail.com",
+                "firstname": "Michael Angelo",
+                "lastname": "Soliven",
                 "displayName": "Michael Angelo Soliven"
+            },
+            {
+                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                "identity": "jseet",
+                "email": "jolene@intedashboard.com",
+                "firstname": "Joleen",
+                "lastname": "Seet",
+                "displayName": "Joleen"
             }
         ]
     }
@@ -568,9 +650,9 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 2,
-        "accountName": "sample-account",
-        "organisationName": "Sample Account",
+        "id": 1,
+        "accountName": "sample-account1",
+        "organisationName": "Sample Account 1",
         "paymentMethod": "Free",
         "type": "Free",
         "isActive": false,
@@ -578,16 +660,27 @@ Key | Value | Description
         "isGeneric": false,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "5355b648-e5bb-4639-b868-b455be661318",
+        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-23T09:34:52Z",
-        "lastModified": "2018-07-23T09:34:52Z",
+        "dateCreated": "2018-08-07T05:57:06Z",
+        "lastModified": "2018-08-07T05:57:06Z",
         "accountAdmins": [
             {
-                "uuid": "51a66105-ac8f-4c85-99e2-38104acdd93a",
+                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
                 "identity": "mbsoliven",
+                "email": "ninomichaelangelosoliven@gmail.com",
+                "firstname": "Michael Angelo",
+                "lastname": "Soliven",
                 "displayName": "Michael Angelo Soliven"
+            },
+            {
+                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
+                "identity": "jseet",
+                "email": "jolene@intedashboard.com",
+                "firstname": "Joleen",
+                "lastname": "Seet",
+                "displayName": "Joleen"
             }
         ]
     }
