@@ -38,26 +38,88 @@ To fully utilise the authentication, listed below are the flows to be followed:
 ```json
 {
     "data": {
-        "account": "Sample Account",
-        "identity": "mbsoliven",
-        "email": "ninomichaelangelosoliven@gmail.com",
-        "firstname": "Michael Angelo",
+        "account": {
+            "avatar": null,
+            "accountName": "soliven",
+            "organisationName": "Soliven Updated",
+            "paymentMethod": "Student",
+            "type": "Free",
+            "isActive": false,
+            "isSuspended": false,
+            "isPaid": false,
+            "startDate": null,
+            "expiryDate": null,
+            "dateExpired": null,
+            "dateActivated": null,
+            "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
+            "isArchived": false,
+            "isTrashed": false,
+            "dateCreated": "2018-09-05T05:01:04Z",
+            "createBy": "Mark Png",
+            "lastModified": "2018-11-22T06:16:49Z"
+        },
+        "accountUuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
+        "avatar": null,
+        "lmsID": null,
+        "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+        "email": "ninomichaelangelosoliven+3@gmail.com",
+        "firstname": "Teacher Michael Angelo",
         "lastname": "Soliven",
-        "displayName": "Michael Angelo Soliven",
-        "role": "teacher",
-        "uuid": "6747a397-285f-4848-b0e0-b217b5fa2a2c",
+        "displayName": "Teacher Michael Angelo Soliven",
+        "accountType": null,
+        "isActive": true,
+        "isSuspended": false,
+        "isDeletable": true,
+        "roleId": 3,
+        "role": "Teacher",
+        "dateSuspended": null,
+        "dateLastLogin": "2018-12-18T06:32:44Z",
+        "dateTempPasswordRequested": null,
+        "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-07-26T02:51:52Z",
-        "createBy": "Brian O’Dwyer",
-        "lastModified": "2018-07-26T03:01:25Z",
+        "dateCreated": "2018-09-07T07:14:38Z",
+        "createBy": "Michael Angelo11 Soliven11",
+        "lastModified": "2018-12-18T06:32:44Z",
         "lastUpdatedBy": null,
-        "authorisations": []
+        "dateActivated": null,
+        "authorisations": [
+            "App\\Http\\Controllers\\UserController@index",
+            "App\\Http\\Controllers\\UserController@store",
+            "App\\Http\\Controllers\\UserController@show",
+            "App\\Http\\Controllers\\UserController@update",
+            "App\\Http\\Controllers\\UserController@archive",
+            "App\\Http\\Controllers\\UserController@destroy",
+            "App\\Http\\Controllers\\UserController@restore"
+        ],
+        "courses": [
+            {
+                "accountType": "Full Access",
+                "uuid": "3fc6328a-327f-44e1-9723-ef1ee7c4efa9",
+                "description": "<p>Test Create 1</p>",
+                "descriptionIsHTML": true,
+                "consumerKeyLTI": "DpuOw8hMgvkrl1EiFxqH",
+                "sharedSecretLTI": "jv6OUAZYQkhfIHK4lpNF",
+                "code": "TA-18",
+                "startDate": "2018-07-23T07:00:00Z",
+                "endDate": "2018-07-26T07:00:00Z",
+                "isPublished": true,
+                "objectives": [
+                    "O1"
+                ],
+                "configURLLTI": "v3-dev.intedashboard.com/lti/config/DpuOw8hMgvkrl1EiFxqH",
+                "launchURLLTI": "v3-dev.intedashboard.com/lti/launch/DpuOw8hMgvkrl1EiFxqH",
+                "isArchived": false,
+                "isTrashed": false,
+                "dateCreated": "2018-12-10T04:07:12Z",
+                "lastModified": "2018-12-10T04:07:12Z"
+            }
+        ]
     }
 }
 ```
 
-> 403
+> 401
 
 ```json
 {
@@ -65,21 +127,7 @@ To fully utilise the authentication, listed below are the flows to be followed:
         "message": [
             "Verification are allowed for first time users only."
         ],
-        "status_code": 403
-    }
-}
-```
-
-> 404
-
-```json
-{
-    "error": {
-        "message": [
-            "Reset token not found.",
-            "Email not found."
-        ],
-        "status_code": 404
+        "status_code": 401
     }
 }
 ```
@@ -88,19 +136,30 @@ To fully utilise the authentication, listed below are the flows to be followed:
 
 ```json
 {
-    "message": [
-        "422 Unprocessable Entity",
-        "Password must contain uppercase character(s).",
-        "Password must contain lowercase character(s).",
-        "Password must contain special character(s).",
-        "Password must contain numeric character(s)."
+  "message": "422 Unprocessable Entity",
+  "errors": {
+    "means": [
+      "The means field is required.",
+      "The selected means is invalid."
     ],
-    "errors": {
-        "identity": [
-            "The access field is required."
-        ]
-    },
-    "status_code": 422
+    "token": [
+      "The token field is required.",
+      "The selected token is invalid."
+    ],
+    "password": [
+      "The password field is required.",
+      "The password must be at least 8 characters.",
+      "The password confirmation does not match.",
+      "Password must contain uppercase character(s).",
+      "Password must contain lowercase character(s).",
+      "Password must contain special character(s).",
+      "Password must contain numeric character(s)."
+    ],
+    "password_confirmation": [
+      "The password confirmation field is required."
+    ]
+  },
+  "status_code": 422
 }
 ```
 
@@ -125,10 +184,9 @@ Parameter | Description
 --------- | -----------
 means <br /> `required`| **string** <br /> token
 token <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 password <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 password_confirmation <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-            
+
             
             
             
@@ -144,26 +202,104 @@ password_confirmation <br /> `required`| **string** <br /> Lorem ipsum dolor sit
     "status_code": 200,
     "message": "OK",
     "user": {
-        "account": null,
-        "identity": "bodwyer",
-        "email": "brian@cognalearn.com",
-        "firstname": "Brian",
-        "lastname": "O’Dwyer",
-        "displayName": "",
-        "role": "super admin",
-        "uuid": "b5669180-a81e-490e-ae4e-f464e5afdb5b",
+        "account": {
+            "avatar": null,
+            "accountName": "soliven",
+            "organisationName": "Soliven Updated",
+            "paymentMethod": "Student",
+            "type": "Free",
+            "isActive": false,
+            "isSuspended": false,
+            "isPaid": false,
+            "startDate": null,
+            "expiryDate": null,
+            "dateExpired": null,
+            "dateActivated": null,
+            "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
+            "isArchived": false,
+            "isTrashed": false,
+            "dateCreated": "2018-09-05T05:01:04Z",
+            "createBy": "Mark Png",
+            "lastModified": "2018-11-22T06:16:49Z"
+        },
+        "accountUuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
+        "avatar": null,
+        "lmsID": null,
+        "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+        "email": "ninomichaelangelosoliven+3@gmail.com",
+        "firstname": "Teacher Michael Angelo",
+        "lastname": "Soliven",
+        "displayName": "Teacher Michael Angelo Soliven",
+        "accountType": null,
+        "isActive": true,
+        "isSuspended": false,
+        "isDeletable": true,
+        "roleId": 3,
+        "role": "Teacher",
+        "dateSuspended": null,
+        "dateLastLogin": "2018-12-18T06:32:44Z",
+        "dateTempPasswordRequested": null,
+        "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": null,
-        "createBy": null,
-        "lastModified": "2018-07-26T02:45:28Z",
+        "dateCreated": "2018-09-07T07:14:38Z",
+        "createBy": "Michael Angelo11 Soliven11",
+        "lastModified": "2018-12-18T06:32:44Z",
         "lastUpdatedBy": null,
-        "authorisations": []
+        "dateActivated": null,
+        "authorisations": [
+            "App\\Http\\Controllers\\UserController@index",
+            "App\\Http\\Controllers\\UserController@store",
+            "App\\Http\\Controllers\\UserController@show",
+            "App\\Http\\Controllers\\UserController@update",
+            "App\\Http\\Controllers\\UserController@archive",
+            "App\\Http\\Controllers\\UserController@destroy",
+            "App\\Http\\Controllers\\UserController@restore"
+        ],
+        "courses": [
+            {
+                "accountType": "Full Access",
+                "uuid": "3fc6328a-327f-44e1-9723-ef1ee7c4efa9",
+                "description": "<p>Test Create 1</p>",
+                "descriptionIsHTML": true,
+                "consumerKeyLTI": "DpuOw8hMgvkrl1EiFxqH",
+                "sharedSecretLTI": "jv6OUAZYQkhfIHK4lpNF",
+                "code": "TA-18",
+                "startDate": "2018-07-23T07:00:00Z",
+                "endDate": "2018-07-26T07:00:00Z",
+                "isPublished": true,
+                "objectives": [
+                    "O1"
+                ],
+                "configURLLTI": "v3-dev.intedashboard.com/lti/config/DpuOw8hMgvkrl1EiFxqH",
+                "launchURLLTI": "v3-dev.intedashboard.com/lti/launch/DpuOw8hMgvkrl1EiFxqH",
+                "isArchived": false,
+                "isTrashed": false,
+                "dateCreated": "2018-12-10T04:07:12Z",
+                "lastModified": "2018-12-10T04:07:12Z"
+            }
+        ]
     },
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ikd5T0M1NG1vbThEaVZkTDJqQzQxZ3pzeUV5NllJanFXTjhsVWE3YzRldUJTdUQ5bFZYd29EUzNSVnVRZ3JPWGl6VXhqeW50TVdpSmExUEdQIn0.eyJzdWIiOiJJbnRlRGFzaGJvYXJkIiwiaXNzIjoiQ29nbmFMZWFybiIsImF1ZCI6InN1cGVyIGFkbWluIiwianRpIjoiR3lPQzU0bW9tOERpVmRMMmpDNDFnenN5RXk2WUlqcVdOOGxVYTdjNGV1QlN1RDlsVlh3b0RTM1JWdVFnck9YaXpVeGp5bnRNV2lKYTFQR1AiLCJpYXQiOjE1MzI1NzMxMzAsIm5iZiI6MTUzMjU3MzEzMCwiZXhwIjoxNTMyNjU5NTMwfQ.8Q-UZYp7iwrfQO5HNBF68u8dxkdbJJwT9gDWhzzeV7M",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IkRMWEk1TVcwbzMyaVBlQ04wb1hhU2dIb3ZXSGM3UWhvRlZ5QTBmbkFKRThHTmdSS1lSd1VKSnV3SjJ1eGxYRkhPN2djeHl0YTVhc0tTT2lPIn0.eyJzdWIiOiJJbnRlRGFzaGJvYXJkIiwiaXNzIjoiQ29nbmFMZWFybiIsImF1ZCI6IjMiLCJqdGkiOiJETFhJNU1XMG8zMmlQZUNOMG9YYVNnSG92V0hjN1Fob0ZWeUEwZm5BSkU4R05nUktZUndVSkp1d0oydXhsWEZITzdnY3h5dGE1YXNLU09pTyIsImlhdCI6MTU0NTExNDc3MSwibmJmIjoxNTQ1MTE0NzcxLCJleHAiOjE1NDUyMDExNzF9.4Eg6_9-XxCn2KCL4eFZxce-zJ6T_-KpbIvssLo-bWbc",
     "password_expired": false
 }
 ```
+
+
+> 401
+
+```json
+{
+    "error": {
+        "message": [
+            "User not found. Please try again.",
+            "Identity or Password is invalid."
+        ],
+        "status_code": 401
+    }
+}
+```
+
 
 > 403
 
@@ -171,30 +307,16 @@ password_confirmation <br /> `required`| **string** <br /> Lorem ipsum dolor sit
 {
     "error": {
         "message": [
-            "Identity or Password is invalid.",
-            "Identity or Password is invalid. 3 login attempt(s) left",
-            "Account has been temporarily locked because of too many failed attempts.",
-            "Account has been locked. Please contact your Account Administrator.",
-            "Account has been locked. Please try again after 6hr and 32min or contact your Account Administrator."
-            "Permission denied."
+            "Account is suspended.",
+            "User has multiple account. Please select role.",
+            "User is not active.",
+            "User is suspended."
         ],
         "status_code": 403
     }
 }
 ```
 
-> 404
-
-```json
-{
-    "error": {
-        "message": [
-            "User does not exist."
-        ],
-        "status_code": 404
-    }
-}
-```
 
 > 422
 
@@ -202,8 +324,15 @@ password_confirmation <br /> `required`| **string** <br /> Lorem ipsum dolor sit
 {
     "message": "422 Unprocessable Entity",
     "errors": {
+        "organisation": [
+            "The organisation field is required.",
+            "Organisation not found."
+        ],
         "identity": [
             "The identity field is required."
+        ],
+        "password": [
+            "The password field is required."
         ]
     },
     "status_code": 422
@@ -229,6 +358,6 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-organisation <br /> `required if roleID != 1`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+organisation <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 password <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.

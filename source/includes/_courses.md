@@ -154,7 +154,7 @@ Key | Value | Description
 {
   "message": "422 Unprocessable Entity",
   "errors": {
-    "identity": [
+    "name": [
       "The name field is required."
     ]
   },

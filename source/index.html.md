@@ -14,11 +14,6 @@ includes:
   - profile
   - roles
   - users
-  - accounts
-  - account-users
-  - courses
-  - modules
-  - questions
   - errors
 
 search: true
@@ -87,7 +82,7 @@ Returns trashed records only.<br/><br/>
 Returns untrashed records only.<br/><br/>
 </aside>
 
-* **Default roles** - Super Admin, Account Admin, Teacher, and Student
+* **Default roles** - Super Admin, Admin Teacher Account, Teacher, and Student
 
 * **Super Admin User** - A permanent default user.
     * *identity* - bodwyer
@@ -143,7 +138,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed nibh nec te
 ID | Name | Description
 ------- | ------- | -----------
 `1` | **Superuser** | People who work at CognaLearn.
-`2` | **Account Admin** | Every Account has an Admin Teacher who has full access to the Account.
+`2` | **Admin Teacher Account** | Every Account has an Admin Teacher who has full access to the Account.
 `3` | **Teacher** | Lorem ipsum dolor sit amet.
 `4` | **Student** | Lorem ipsum dolor sit amet.
 

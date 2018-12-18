@@ -18,6 +18,7 @@ Resources related to <code>account user management</code>.
     "data": [
         {
             "account": null,
+            "accountUuid": null,
             "identity": "bodwyer",
             "email": "brian@cognalearn.com",
             "firstname": "Brian",
@@ -82,7 +83,7 @@ This resource allows to list all account users.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`
+`GET [BASE_URL]/accounts/`**account-uuid**`/account-users/`
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -128,6 +129,7 @@ Key | Value | Description
 {
     "data": {
         "account": null,
+        "accountUuid": null,
         "identity": "bodwyer",
         "email": "brian@cognalearn.com",
         "firstname": "Brian",
@@ -181,7 +183,7 @@ This resource create new account user.
 
 ### HTTP Request
 
-`POST [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`
+`POST [BASE_URL]/accounts/`**account-uuid**`/account-users/`
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -223,6 +225,7 @@ When an Account is created, the User receives an invitation email with a link fo
 {
     "data": {
         "account": null,
+        "accountUuid": null,
         "identity": "bodwyer",
         "email": "brian@cognalearn.com",
         "firstname": "Brian",
@@ -273,7 +276,7 @@ This resource retrieve specific account user.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+`GET [BASE_URL]/accounts/`**account-uuid**`/account-users/`**uuid**
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -311,6 +314,7 @@ Key | Value | Description
 {
     "data": {
         "account": null,
+        "accountUuid": null,
         "identity": "bodwyer",
         "email": "brian@cognalearn.com",
         "firstname": "Brian",
@@ -375,7 +379,7 @@ This resource update selected account user.
 
 ### HTTP Request
 
-`PUT [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+`PUT [BASE_URL]/accounts/`**account-uuid**`/account-users/`**uuid**
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -424,6 +428,7 @@ roleId <br /> `required`| **int** <br /> Lorem ipsum dolor sit amet, consectetur
 {
     "data": {
         "account": null,
+        "accountUuid": null,
         "identity": "bodwyer",
         "email": "brian@cognalearn.com",
         "firstname": "Brian",
@@ -475,7 +480,7 @@ This resource archive/unarchive selected account user.
 
 ### HTTP Request
 
-`PATCH [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+`PATCH [BASE_URL]/accounts/`**account-uuid**`/account-users/`**uuid**
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -545,7 +550,7 @@ This resource trash selected account user.
 
 ### HTTP Request
 
-`DELETE [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**
+`DELETE [BASE_URL]/accounts/`**account-uuid**`/account-users/`**uuid**
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
@@ -580,6 +585,7 @@ Key | Value | Description
 {
     "data": {
         "account": null,
+        "accountUuid": null,
         "identity": "bodwyer",
         "email": "brian@cognalearn.com",
         "firstname": "Brian",
@@ -630,7 +636,7 @@ This resource untrash trashed account user.
 
 ### HTTP Request
 
-`GET [BASE_URL]/accounts/`**account-uuid**`/accounts-users/`**uuid**`/restore`
+`GET [BASE_URL]/accounts/`**account-uuid**`/account-users/`**uuid**`/restore`
 
 URI Parameter | Type | Description
 --------- | ------- | -----------
