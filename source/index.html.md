@@ -14,6 +14,7 @@ includes:
   - profile
   - roles
   - users
+  - accounts
   - errors
 
 search: true
