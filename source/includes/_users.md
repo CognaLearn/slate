@@ -1625,3 +1625,43 @@ Key | Value | Description
 ### HTTP Post Parameters
 
 `No HTTP post parameters required.`
+
+
+
+## Send Temporary Password
+
+> 200
+
+```json
+{
+    "sent": true
+}
+```
+
+
+This resource allows to send token for user's temporary password.
+
+
+
+### HTTP Request
+
+`POST [BASE_URL]/users/`**uuid**`/send-temporary-password`
+
+URI Parameter | Type | Description
+--------- | ------- | -----------
+uuid | string | The generated UUID of the selected user.
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+
+`No HTTP post parameters required.`

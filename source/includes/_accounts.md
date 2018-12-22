@@ -17,72 +17,113 @@ Resources related to <code>account management</code>.
 {
     "data": [
         {
-            "id": 1,
-            "accountName": "sample-account1",
-            "organisationName": "Sample Account 1",
-            "paymentMethod": "Free",
+            "avatar": null,
+            "accountName": "soliven",
+            "organisationName": "Soliven Updated",
+            "paymentMethod": "Student",
             "type": "Free",
             "isActive": false,
+            "isSuspended": false,
             "isPaid": false,
-            "isGeneric": false,
+            "startDate": null,
             "expiryDate": null,
             "dateExpired": null,
-            "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+            "dateActivated": null,
+            "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
             "isArchived": false,
             "isTrashed": false,
-            "dateCreated": "2018-08-07T05:57:06Z",
-            "lastModified": "2018-08-07T05:57:06Z",
-            "accountAdmins": [
+            "dateCreated": "2018-09-05T05:01:04Z",
+            "createBy": "Mark Png",
+            "lastModified": "2018-11-22T06:16:49Z",
+            "paymentPlans": [
                 {
-                    "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                    "identity": "mbsoliven",
-                    "email": "ninomichaelangelosoliven@gmail.com",
-                    "firstname": "Michael Angelo",
-                    "lastname": "Soliven",
-                    "displayName": "Michael Angelo Soliven"
+                    "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                    "name": "One Year",
+                    "price": "12.23",
+                    "currency": "USD",
+                    "startDate": "2018-07-23T00:00:00Z",
+                    "endDate": "2018-07-24T00:00:00Z"
+                }
+            ],
+            "adminTeacherAccounts": [
+                {
+                    "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                    "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                    "email": "ninomichaelangelosoliven+2@gmail.com",
+                    "firstname": "Michael Angelo11",
+                    "lastname": "Soliven11",
+                    "displayName": "Michael Angelo Soliven",
+                    "accountType": null,
+                    "isActive": true,
+                    "isSuspended": false,
+                    "dateLastLogin": "2018-12-10T02:40:29Z"
                 },
                 {
-                    "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                    "identity": "jseet",
-                    "email": "jolene@intedashboard.com",
-                    "firstname": "Joleen",
-                    "lastname": "Seet",
-                    "displayName": "Joleen"
+                    "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                    "identity": "1-mcpng",
+                    "email": "mark.c.png@gmail.com",
+                    "firstname": "Mark",
+                    "lastname": "Png",
+                    "displayName": "",
+                    "accountType": null,
+                    "isActive": true,
+                    "isSuspended": false,
+                    "dateLastLogin": "2018-11-08T05:11:44Z"
                 }
-            ]
-        },
-        {
-            "id": 20,
-            "accountName": "sample-account2",
-            "organisationName": "Sample Account 2",
-            "paymentMethod": "Free",
-            "type": "Free",
-            "isActive": false,
-            "isPaid": false,
-            "isGeneric": false,
-            "expiryDate": null,
-            "dateExpired": null,
-            "uuid": "45c69f06-edb2-4533-9dcd-a028ee1752b6",
-            "isArchived": false,
-            "isTrashed": false,
-            "dateCreated": "2018-08-07T08:54:15Z",
-            "lastModified": "2018-08-07T08:54:15Z",
-            "accountAdmins": [
+            ],
+            "adminTeacherAccount": {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
+            },
+            "teachers": [
                 {
-                    "uuid": "b2601c58-f7eb-47fb-8c47-390389731bd9",
-                    "identity": "mbsoliven2",
-                    "email": "ninomichaelangelosoliven2@gmail.com",
-                    "firstname": "Michael Angelo 2",
+                    "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                    "identity": "1-test4@example.com",
+                    "email": "test4@example.com",
+                    "firstname": "Updated thru",
+                    "lastname": "Course User",
+                    "displayName": "Jane Why Doe",
+                    "isActive": false,
+                    "isSuspended": false,
+                    "dateLastLogin": null
+                },
+                {
+                    "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                    "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                    "email": "ninomichaelangelosoliven+3@gmail.com",
+                    "firstname": "Teacher Michael Angelo",
                     "lastname": "Soliven",
-                    "displayName": "Michael Angelo 2 Soliven"
+                    "displayName": "Teacher Michael Angelo Soliven",
+                    "isActive": true,
+                    "isSuspended": false,
+                    "dateLastLogin": "2018-12-20T04:14:21Z"
+                },
+                {
+                    "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                    "identity": "1-mcpng-st",
+                    "email": "mark.c.png@gmail.com",
+                    "firstname": "Mark",
+                    "lastname": "Png",
+                    "displayName": "",
+                    "isActive": true,
+                    "isSuspended": false,
+                    "dateLastLogin": "2018-10-25T09:29:34Z"
                 }
             ]
         }
     ],
     "meta": {
         "pagination": {
-            "total": 2,
-            "count": 2,
+            "total": 1,
+            "count": 1,
             "per_page": 10,
             "current_page": 1,
             "total_pages": 1,
@@ -146,37 +187,105 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 1,
-        "accountName": "sample-account1",
-        "organisationName": "Sample Account 1",
-        "paymentMethod": "Free",
+        "avatar": null,
+        "accountName": "soliven",
+        "organisationName": "Soliven Updated",
+        "paymentMethod": "Student",
         "type": "Free",
         "isActive": false,
+        "isSuspended": false,
         "isPaid": false,
-        "isGeneric": false,
+        "startDate": null,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+        "dateActivated": null,
+        "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-07T05:57:06Z",
-        "lastModified": "2018-08-07T05:57:06Z",
-        "accountAdmins": [
+        "dateCreated": "2018-09-05T05:01:04Z",
+        "createBy": "Mark Png",
+        "lastModified": "2018-11-22T06:16:49Z",
+        "paymentPlans": [
             {
-                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                "identity": "mbsoliven",
-                "email": "ninomichaelangelosoliven@gmail.com",
-                "firstname": "Michael Angelo",
-                "lastname": "Soliven",
-                "displayName": "Michael Angelo Soliven"
+                "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                "name": "One Year",
+                "price": "12.23",
+                "currency": "USD",
+                "startDate": "2018-07-23T00:00:00Z",
+                "endDate": "2018-07-24T00:00:00Z"
+            }
+        ],
+        "adminTeacherAccounts": [
+            {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
             },
             {
-                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                "identity": "jseet",
-                "email": "jolene@intedashboard.com",
-                "firstname": "Joleen",
-                "lastname": "Seet",
-                "displayName": "Joleen"
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                "identity": "1-mcpng",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-11-08T05:11:44Z"
+            }
+        ],
+        "adminTeacherAccount": {
+            "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+            "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+            "email": "ninomichaelangelosoliven+2@gmail.com",
+            "firstname": "Michael Angelo11",
+            "lastname": "Soliven11",
+            "displayName": "Michael Angelo Soliven",
+            "accountType": null,
+            "isActive": true,
+            "isSuspended": false,
+            "dateLastLogin": "2018-12-10T02:40:29Z"
+        },
+        "teachers": [
+            {
+                "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                "identity": "1-test4@example.com",
+                "email": "test4@example.com",
+                "firstname": "Updated thru",
+                "lastname": "Course User",
+                "displayName": "Jane Why Doe",
+                "isActive": false,
+                "isSuspended": false,
+                "dateLastLogin": null
+            },
+            {
+                "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                "email": "ninomichaelangelosoliven+3@gmail.com",
+                "firstname": "Teacher Michael Angelo",
+                "lastname": "Soliven",
+                "displayName": "Teacher Michael Angelo Soliven",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-20T04:14:21Z"
+            },
+            {
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                "identity": "1-mcpng-st",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-10-25T09:29:34Z"
             }
         ]
     }
@@ -194,28 +303,51 @@ Key | Value | Description
 }
 ```
 
-> 404
-
-```json
-{
-  "error": {
-    "message": "No account attached to user.",
-    "status_code": 404
-  }
-}
-```
-
 > 422
 
 ```json
 {
-  "message": "422 Unprocessable Entity",
-  "errors": {
-    "account": [
-      "The account field is required."
-    ]
-  },
-  "status_code": 422
+    "message": "422 Unprocessable Entity",
+    "errors": {
+        "accountName": [
+            "The account name field is required.",
+            "The account name has already been taken.",
+            "The account name should only contain alphanumeric characters (a-z, 0-9).",
+            "The account name should not contain uppercase.",
+            "The account name should not contain special characters.",
+            "Reserved words should never be used."
+        ],
+        "organisationName": [
+            "The organisation name field is required.",
+            "The organisation name has already been taken."
+        ],
+        "type": [
+            "The selected type is invalid."
+        ],
+        "paymentMethod": [
+            "The selected payment method is invalid."
+        ],
+        "startDate": [
+            "The start date field is required."
+        ],
+        "expiryDate": [
+            "The expiry date field is required."
+        ],
+        "paymentPlans": [
+            "The payment plans field is required."
+        ],
+        "email": [
+            "The email field is required."
+        ],
+        "identity": [
+            "The identity field is required."
+        ],
+        "firstname": [
+            "The firstname field is required."
+        ]
+        
+    },
+    "status_code": 422
 }
 ```
 
@@ -239,10 +371,15 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
+avatar <br /> | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-paymentMethod <br /> `required`| **enum[string]** <br /> `Demo, Trial, Paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type <br /> `required`| **enum[string]** <br /> `Institution, Student-paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentMethod <br /> `required`| **enum[string]** <br /> `Institute, Student, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> `Demo, Trial, Paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+accountType <br /> | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+startDate <br /> `required if paymentMethod == institute`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+expiryDate <br /> `required if paymentMethod == institute`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentPlans <br /> `required if paymentMethod == student`| **json[string]** <br /> `[name, price, currency, startDate, endDate]` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
@@ -250,7 +387,7 @@ email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectet
                 
 
 <aside class="info">
-When an Account is created by a Superuser and the Admin Teacher is created, the Admin Teacher receives an invitation email with a link for them to set their password and access their Account.
+When an Account is created by a Superuser, the Admin Teacher receives an invitation email with a link for them to set their password and access their Account.
 </aside>
 
 
@@ -262,37 +399,105 @@ When an Account is created by a Superuser and the Admin Teacher is created, the 
 ```json
 {
     "data": {
-        "id": 1,
-        "accountName": "sample-account1",
-        "organisationName": "Sample Account 1",
-        "paymentMethod": "Free",
+        "avatar": null,
+        "accountName": "soliven",
+        "organisationName": "Soliven Updated",
+        "paymentMethod": "Student",
         "type": "Free",
         "isActive": false,
+        "isSuspended": false,
         "isPaid": false,
-        "isGeneric": false,
+        "startDate": null,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+        "dateActivated": null,
+        "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-07T05:57:06Z",
-        "lastModified": "2018-08-07T05:57:06Z",
-        "accountAdmins": [
+        "dateCreated": "2018-09-05T05:01:04Z",
+        "createBy": "Mark Png",
+        "lastModified": "2018-11-22T06:16:49Z",
+        "paymentPlans": [
             {
-                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                "identity": "mbsoliven",
-                "email": "ninomichaelangelosoliven@gmail.com",
-                "firstname": "Michael Angelo",
-                "lastname": "Soliven",
-                "displayName": "Michael Angelo Soliven"
+                "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                "name": "One Year",
+                "price": "12.23",
+                "currency": "USD",
+                "startDate": "2018-07-23T00:00:00Z",
+                "endDate": "2018-07-24T00:00:00Z"
+            }
+        ],
+        "adminTeacherAccounts": [
+            {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
             },
             {
-                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                "identity": "jseet",
-                "email": "jolene@intedashboard.com",
-                "firstname": "Joleen",
-                "lastname": "Seet",
-                "displayName": "Joleen"
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                "identity": "1-mcpng",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-11-08T05:11:44Z"
+            }
+        ],
+        "adminTeacherAccount": {
+            "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+            "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+            "email": "ninomichaelangelosoliven+2@gmail.com",
+            "firstname": "Michael Angelo11",
+            "lastname": "Soliven11",
+            "displayName": "Michael Angelo Soliven",
+            "accountType": null,
+            "isActive": true,
+            "isSuspended": false,
+            "dateLastLogin": "2018-12-10T02:40:29Z"
+        },
+        "teachers": [
+            {
+                "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                "identity": "1-test4@example.com",
+                "email": "test4@example.com",
+                "firstname": "Updated thru",
+                "lastname": "Course User",
+                "displayName": "Jane Why Doe",
+                "isActive": false,
+                "isSuspended": false,
+                "dateLastLogin": null
+            },
+            {
+                "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                "email": "ninomichaelangelosoliven+3@gmail.com",
+                "firstname": "Teacher Michael Angelo",
+                "lastname": "Soliven",
+                "displayName": "Teacher Michael Angelo Soliven",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-20T04:14:21Z"
+            },
+            {
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                "identity": "1-mcpng-st",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-10-25T09:29:34Z"
             }
         ]
     }
@@ -361,37 +566,105 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 1,
-        "accountName": "sample-account1",
-        "organisationName": "Sample Account 1",
-        "paymentMethod": "Free",
+        "avatar": null,
+        "accountName": "soliven",
+        "organisationName": "Soliven Updated",
+        "paymentMethod": "Student",
         "type": "Free",
         "isActive": false,
+        "isSuspended": false,
         "isPaid": false,
-        "isGeneric": false,
+        "startDate": null,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+        "dateActivated": null,
+        "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-07T05:57:06Z",
-        "lastModified": "2018-08-07T05:57:06Z",
-        "accountAdmins": [
+        "dateCreated": "2018-09-05T05:01:04Z",
+        "createBy": "Mark Png",
+        "lastModified": "2018-11-22T06:16:49Z",
+        "paymentPlans": [
             {
-                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                "identity": "mbsoliven",
-                "email": "ninomichaelangelosoliven@gmail.com",
-                "firstname": "Michael Angelo",
-                "lastname": "Soliven",
-                "displayName": "Michael Angelo Soliven"
+                "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                "name": "One Year",
+                "price": "12.23",
+                "currency": "USD",
+                "startDate": "2018-07-23T00:00:00Z",
+                "endDate": "2018-07-24T00:00:00Z"
+            }
+        ],
+        "adminTeacherAccounts": [
+            {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
             },
             {
-                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                "identity": "jseet",
-                "email": "jolene@intedashboard.com",
-                "firstname": "Joleen",
-                "lastname": "Seet",
-                "displayName": "Joleen"
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                "identity": "1-mcpng",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-11-08T05:11:44Z"
+            }
+        ],
+        "adminTeacherAccount": {
+            "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+            "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+            "email": "ninomichaelangelosoliven+2@gmail.com",
+            "firstname": "Michael Angelo11",
+            "lastname": "Soliven11",
+            "displayName": "Michael Angelo Soliven",
+            "accountType": null,
+            "isActive": true,
+            "isSuspended": false,
+            "dateLastLogin": "2018-12-10T02:40:29Z"
+        },
+        "teachers": [
+            {
+                "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                "identity": "1-test4@example.com",
+                "email": "test4@example.com",
+                "firstname": "Updated thru",
+                "lastname": "Course User",
+                "displayName": "Jane Why Doe",
+                "isActive": false,
+                "isSuspended": false,
+                "dateLastLogin": null
+            },
+            {
+                "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                "email": "ninomichaelangelosoliven+3@gmail.com",
+                "firstname": "Teacher Michael Angelo",
+                "lastname": "Soliven",
+                "displayName": "Teacher Michael Angelo Soliven",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-20T04:14:21Z"
+            },
+            {
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                "identity": "1-mcpng-st",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-10-25T09:29:34Z"
             }
         ]
     }
@@ -424,13 +697,41 @@ Key | Value | Description
 
 ```json
 {
-  "message": "422 Unprocessable Entity",
-  "errors": {
-    "identity": [
-      "The account field is required."
-    ]
-  },
-  "status_code": 422
+    "message": "422 Unprocessable Entity",
+    "errors": {
+        "accountName": [
+            "The account name has already been taken.",
+            "The account name should only contain alphanumeric characters (a-z, 0-9).",
+            "The account name should not contain uppercase.",
+            "The account name should not contain special characters.",
+            "Reserved words should never be used."
+        ],
+        "organisationName": [
+            "The organisation name has already been taken."
+        ],
+        "type": [
+            "The selected type is invalid."
+        ],
+        "paymentMethod": [
+            "The selected payment method is invalid."
+        ],
+        "startDate": [
+            "The start date field is required."
+        ],
+        "expiryDate": [
+            "The expiry date field is required."
+        ],
+        "paymentPlans": [
+            "The payment plans field is required."
+        ],
+        "isActive": [
+          "The is active field must be true or false."
+        ],
+        "isSuspended": [
+          "The is suspended field must be true or false."
+        ]   
+    },
+    "status_code": 422
 }
 ```
 
@@ -458,14 +759,21 @@ Key | Value | Description
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
+avatar <br /> | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 accountName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 organisationName <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-paymentMethod <br /> `required`| **enum[string]** <br /> `Demo, Trial, Paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-type <br /> `required`| **enum[string]** <br /> `Institution, Student-paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isActive| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isPaid| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-isGeneric| **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentMethod <br /> `required`| **enum[string]** <br /> `Institute, Student, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+type <br /> `required`| **enum[string]** <br /> `Demo, Trial, Paid, Free` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+accountType <br /> | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+startDate <br /> `required if paymentMethod == institute`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+expiryDate <br /> `required if paymentMethod == institute`| **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+paymentPlans <br /> `required if paymentMethod == student`| **json[string]** <br /> `[name, price, currency, startDate, endDate]` <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+firstname <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+lastname | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+identity <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+email <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isSuspended <br /> | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+isActive <br /> | **boolean** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
 
 
 
@@ -487,37 +795,105 @@ expiryDate | **date** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing 
 ```json
 {
     "data": {
-        "id": 1,
-        "accountName": "sample-account1",
-        "organisationName": "Sample Account 1",
-        "paymentMethod": "Free",
+        "avatar": null,
+        "accountName": "soliven",
+        "organisationName": "Soliven Updated",
+        "paymentMethod": "Student",
         "type": "Free",
         "isActive": false,
+        "isSuspended": false,
         "isPaid": false,
-        "isGeneric": false,
+        "startDate": null,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+        "dateActivated": null,
+        "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-07T05:57:06Z",
-        "lastModified": "2018-08-07T05:57:06Z",
-        "accountAdmins": [
+        "dateCreated": "2018-09-05T05:01:04Z",
+        "createBy": "Mark Png",
+        "lastModified": "2018-11-22T06:16:49Z",
+        "paymentPlans": [
             {
-                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                "identity": "mbsoliven",
-                "email": "ninomichaelangelosoliven@gmail.com",
-                "firstname": "Michael Angelo",
-                "lastname": "Soliven",
-                "displayName": "Michael Angelo Soliven"
+                "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                "name": "One Year",
+                "price": "12.23",
+                "currency": "USD",
+                "startDate": "2018-07-23T00:00:00Z",
+                "endDate": "2018-07-24T00:00:00Z"
+            }
+        ],
+        "adminTeacherAccounts": [
+            {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
             },
             {
-                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                "identity": "jseet",
-                "email": "jolene@intedashboard.com",
-                "firstname": "Joleen",
-                "lastname": "Seet",
-                "displayName": "Joleen"
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                "identity": "1-mcpng",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-11-08T05:11:44Z"
+            }
+        ],
+        "adminTeacherAccount": {
+            "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+            "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+            "email": "ninomichaelangelosoliven+2@gmail.com",
+            "firstname": "Michael Angelo11",
+            "lastname": "Soliven11",
+            "displayName": "Michael Angelo Soliven",
+            "accountType": null,
+            "isActive": true,
+            "isSuspended": false,
+            "dateLastLogin": "2018-12-10T02:40:29Z"
+        },
+        "teachers": [
+            {
+                "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                "identity": "1-test4@example.com",
+                "email": "test4@example.com",
+                "firstname": "Updated thru",
+                "lastname": "Course User",
+                "displayName": "Jane Why Doe",
+                "isActive": false,
+                "isSuspended": false,
+                "dateLastLogin": null
+            },
+            {
+                "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                "email": "ninomichaelangelosoliven+3@gmail.com",
+                "firstname": "Teacher Michael Angelo",
+                "lastname": "Soliven",
+                "displayName": "Teacher Michael Angelo Soliven",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-20T04:14:21Z"
+            },
+            {
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                "identity": "1-mcpng-st",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-10-25T09:29:34Z"
             }
         ]
     }
@@ -650,37 +1026,105 @@ Key | Value | Description
 ```json
 {
     "data": {
-        "id": 1,
-        "accountName": "sample-account1",
-        "organisationName": "Sample Account 1",
-        "paymentMethod": "Free",
+        "avatar": null,
+        "accountName": "soliven",
+        "organisationName": "Soliven Updated",
+        "paymentMethod": "Student",
         "type": "Free",
         "isActive": false,
+        "isSuspended": false,
         "isPaid": false,
-        "isGeneric": false,
+        "startDate": null,
         "expiryDate": null,
         "dateExpired": null,
-        "uuid": "04a11db6-2f52-41fe-840d-b1f8662e674b",
+        "dateActivated": null,
+        "uuid": "62edba2c-2b15-4053-8e7b-2d935ab914bd",
         "isArchived": false,
         "isTrashed": false,
-        "dateCreated": "2018-08-07T05:57:06Z",
-        "lastModified": "2018-08-07T05:57:06Z",
-        "accountAdmins": [
+        "dateCreated": "2018-09-05T05:01:04Z",
+        "createBy": "Mark Png",
+        "lastModified": "2018-11-22T06:16:49Z",
+        "paymentPlans": [
             {
-                "uuid": "a6d4634d-9ba4-4a72-a69b-8ddd26f362aa",
-                "identity": "mbsoliven",
-                "email": "ninomichaelangelosoliven@gmail.com",
-                "firstname": "Michael Angelo",
-                "lastname": "Soliven",
-                "displayName": "Michael Angelo Soliven"
+                "uuid": "391d2506-a6fa-49f8-ac8d-284010459e43",
+                "name": "One Year",
+                "price": "12.23",
+                "currency": "USD",
+                "startDate": "2018-07-23T00:00:00Z",
+                "endDate": "2018-07-24T00:00:00Z"
+            }
+        ],
+        "adminTeacherAccounts": [
+            {
+                "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+                "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+                "email": "ninomichaelangelosoliven+2@gmail.com",
+                "firstname": "Michael Angelo11",
+                "lastname": "Soliven11",
+                "displayName": "Michael Angelo Soliven",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-10T02:40:29Z"
             },
             {
-                "uuid": "8646c8d4-f0e0-4f2a-abb0-6d782167901f",
-                "identity": "jseet",
-                "email": "jolene@intedashboard.com",
-                "firstname": "Joleen",
-                "lastname": "Seet",
-                "displayName": "Joleen"
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bg",
+                "identity": "1-mcpng",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "accountType": null,
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-11-08T05:11:44Z"
+            }
+        ],
+        "adminTeacherAccount": {
+            "uuid": "deb49db3-99a3-4f7a-bd98-86a6ef46111b",
+            "identity": "1-ninomichaelangelosoliven+2@gmail.com",
+            "email": "ninomichaelangelosoliven+2@gmail.com",
+            "firstname": "Michael Angelo11",
+            "lastname": "Soliven11",
+            "displayName": "Michael Angelo Soliven",
+            "accountType": null,
+            "isActive": true,
+            "isSuspended": false,
+            "dateLastLogin": "2018-12-10T02:40:29Z"
+        },
+        "teachers": [
+            {
+                "uuid": "48bfd12b-ff6a-485a-9d2b-edfc8ac5c7b4",
+                "identity": "1-test4@example.com",
+                "email": "test4@example.com",
+                "firstname": "Updated thru",
+                "lastname": "Course User",
+                "displayName": "Jane Why Doe",
+                "isActive": false,
+                "isSuspended": false,
+                "dateLastLogin": null
+            },
+            {
+                "uuid": "69cf06a2-e946-40fd-8eed-28abfaa1e6e0",
+                "identity": "1-ninomichaelangelosoliven+3@gmail.com",
+                "email": "ninomichaelangelosoliven+3@gmail.com",
+                "firstname": "Teacher Michael Angelo",
+                "lastname": "Soliven",
+                "displayName": "Teacher Michael Angelo Soliven",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-12-20T04:14:21Z"
+            },
+            {
+                "uuid": "7c59fb65-59fd-40cc-b8fe-17a8594515bh",
+                "identity": "1-mcpng-st",
+                "email": "mark.c.png@gmail.com",
+                "firstname": "Mark",
+                "lastname": "Png",
+                "displayName": "",
+                "isActive": true,
+                "isSuspended": false,
+                "dateLastLogin": "2018-10-25T09:29:34Z"
             }
         ]
     }

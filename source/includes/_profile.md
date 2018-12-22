@@ -276,6 +276,90 @@ displayName | **string** <br /> Lorem ipsum dolor sit amet, consectetur adipisci
 
 
 
+## Profile Reset Token
+
+> 200
+
+```json
+{
+    "sent": true
+}
+```
+
+
+This resource allows to send token for logged user's password reset/recovery.
+
+
+
+
+### HTTP Request
+
+`POST [BASE_URL]/profile/send-token`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+
+`No HTTP post parameters required.`
+
+
+
+
+
+## Profile Temporary Password
+
+> 200
+
+```json
+{
+    "sent": true
+}
+```
+
+
+This resource allows to send token for logged user's temporary password.
+
+
+
+
+### HTTP Request
+
+`POST [BASE_URL]/profile/send-temporary-password`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+temporaryPassword <br /> `required`| **string** <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+
+
+
+
+
+
+
+
+
+
 ## Sign-out
 
 > 200
