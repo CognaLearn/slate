@@ -9,16 +9,12 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - authentication
-  - password
-  - profile
-  - roles
-  - users
-  - accounts
-  - errors
+  - courses
+  - course_modules
 
 search: true
 ---
+
 
 # Introduction
 
@@ -26,20 +22,6 @@ The *API Service* for **InteDashboard™** is available on [GitHub](https://gith
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. Vestibulum tincidunt rhoncus sapien ut rutrum. Mauris vel nibh id elit dictum gravida. Maecenas tincidunt et lacus vel vestibulum.  
 
-## Objective
-Listed below are the following objectives that will be accomplished through out this documentation.
-
-* To setup project environment.
-* To familiarized on the resources and data structure.
-* Others...
-
-
-## Project Setup
-These setups are required to successfully utilised the API InteDashboard in local environment.
-
-* Pull latest repo and install composer **(composer install)**
-* Run migration and seeder command **(php artisan migrate:refresh --seed)**
-* Setup .env file
 
 ## Principles
 To support the objective of this documentation, here are the following priniciples that will serve as guidance while using this documentation.
@@ -83,53 +65,13 @@ Returns trashed records only.<br/><br/>
 Returns untrashed records only.<br/><br/>
 </aside>
 
-* **Default roles** - Super Admin, Admin Teacher Account, Teacher, and Student
-
-* **Super Admin User** - A permanent default user.
-    * *identity* - bodwyer
-    * *email* - brian@cognalearn.com
-    * *password* - brian@cognalearn.com
-    * *firstname* - Brian
-    * *lastname* - O’Dwyer
-    * *uuid* - [varies in every migration]
-    
 * Generated token as one of the request headers
 
     `Authorization: Bearer $token`
 
-* Complete list of routers can be found at [Router](#routers). This routes will be used for permission setup per role
-
-* Permission/route setup per role (as parameter)
-
-    `"routers": [ "App\Http\Controllers\RoleController@index" ]`
-
 * **UUID** property will be used as a reference id in URI
 
     `your-local/roles/7a066d34-abb9-4874-8264-353e3bc451fd`
-
-
-
-
-
-## Unit Test
-Automated testing objective is to segregate each part of the program and test that the individual parts are working correctly. **InteDashboard™** provides unit tests to help users/developers better manage and control the following modules: 
-
-* **User and Role** - `RoleTest`
-* **Account** - `AccountTest`
-* **Course** - `CourseTest`
-* **Module** - `ModuleTest`
-    
-
-<aside class="notice">
-To run tests, run the following scripts in your terminal:
-
-<br/>
-<code>phpunit</code> - To run the entire tests.
- 
-<br/>
-<code>phpunit --filter {TestMethodName}</code> - To run specific test. 
-</aside>
-
 
 
 
@@ -138,11 +80,34 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed nibh nec te
 
 ID | Name | Description
 ------- | ------- | -----------
-`1` | **Superuser** | People who work at CognaLearn.
-`2` | **Admin Teacher Account** | Every Account has an Admin Teacher who has full access to the Account.
+`1` | **Superuser** | Lorem ipsum dolor sit amet.
+`2` | **Admin Teacher Account** | Lorem ipsum dolor sit amet.
 `3` | **Teacher** | Lorem ipsum dolor sit amet.
 `4` | **Student** | Lorem ipsum dolor sit amet.
 
-<aside class="notice">
-Each role has several permissions. To update the certain role with certain permissions, proceed to Roles.
-</aside>
+
+
+
+# HTTP Status Codes
+
+API 3.1 InteDashboard use conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error caused by the information provided (i.e., a required parameter was omitted, a method was not found, etc.), and codes in the 5xx range indicate an error with servers.
+
+Status Code | Status Text | Description
+------- | ------- | -----------
+`200` | **OK** | The request has succeeded. The meaning of a success varies depending on the HTTP method: <br/><br/>GET: The resource has been fetched and is transmitted in the message body. <br/><br/> POST: The resource describing the result of the action is transmitted in the message body
+`201` | **Created** |	The request has succeeded and a new resource has been created as a result of it. This is typically the response sent after a PUT request.
+`202` | **Accepted** | The request has succeeded and has been added to the queue, but the resource has not yet been created. This is typically the response sent after PUT and POST requests.
+`204` | **No Content** | There is no content to send for this request. This is common for DELETE requests.
+`307` | **Temporary Redirect** | The target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.
+`400` | **Bad Request** | This response means that server could not understand the request due to invalid syntax.
+`401` | **Unauthorized** | Authentication is needed to get requested response. This is similar to 403, but in this case, authentication is possible.
+`403` | **Forbidden** | Client does not have access rights to the content so server is refusing to give proper response.
+`404` | **Not Found** | Server cannot find the requested resource.
+`405` | **Method Not Found** | The request method is known by the server but has been disabled and cannot be used. Double check your method type (i.e. GET, POST, PUT, DELETE)
+`409` | **Conflict** | This response would be sent when a request conflicts with the current state of the server.
+`429` | **Too Many Requests** | The user has sent too many requests in a given amount of time (“rate limiting”).
+`499` | **Internal Server Error** | The server has encountered an internal error.
+`500` | **Internal Server Error** | The server has encountered a situation it doesn’t know how to handle.
+`502` | **Bad Gateway** | The server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.
+`503` | **Service Unavailable** | The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.
+`504` | **Gateway Timeout** | This error response is given when the server is acting as a gateway and cannot get a response in time.
