@@ -67,10 +67,8 @@ Resources related to <code>course modules management</code>.
 
 ```json
 {
-  "error": {
-    "message": "Permission denied.",
-    "status_code": 403
-  }
+    "message": "Not Found",
+    "status_code": 404
 }
 ```
 
@@ -87,11 +85,8 @@ This resource gets all modules of specific course.
 `i.e. [BASE_URL]/courses/{course-uuid}/modules?page=1&per_page=3`
 
 ### Request Headers
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
+[Standard Request Headers](#principles)
 
 ### HTTP Post Parameters
 

@@ -52,11 +52,8 @@ This resource gets all courses.
 `i.e. [BASE_URL]/courses?page=1&per_page=3`
 
 ### Request Headers
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
+[Standard Request Headers](#principles)
 
 ### HTTP Post Parameters
 

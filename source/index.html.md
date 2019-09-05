@@ -2,16 +2,21 @@
 title: API 3.1 InteDashboard
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - php: PHP
+  - json: PHP
+<!-- - json--wb: Winterbreak -->
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - activities
   - courses
   - course_modules
-
+  - dashboard
+  - tests
+  - test_discussions
+  
 search: true
 ---
 
@@ -65,13 +70,50 @@ Returns trashed records only.<br/><br/>
 Returns untrashed records only.<br/><br/>
 </aside>
 
-* Generated token as one of the request headers
+* **Standard Request Headers** - These values are standard for **authenticated** resources.
 
-    `Authorization: Bearer $token`
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<aside>
+Generated token will be included in the value of <b>Authorization</b> key of <i>Request Headers</i>.
+<br/>
+<code>Authorization: Bearer $token</code>
+</aside>
+
 
 * **UUID** property will be used as a reference id in URI
 
     `your-local/roles/7a066d34-abb9-4874-8264-353e3bc451fd`
+
+
+## Winterbreak
+These parameters are standard for all **winterbreak** setups.
+
+* **URL**
+
+    `https://winterbreak-dev.intedashboard.com/winterbreak`
+
+* **Headers** - These values are standard for **authenticated** resources.
+
+Key | Value | Description
+--------- | ------- | -----------
+`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
+`Authorization` | **$key** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<aside>
+Exclusive key value will be included in the value of <b>Authorization</b> key of <i>Winterbreak Headers</i>.
+<br/>
+<code>Authorization: $key</code>
+</aside>
+
+* **Key**
+
+    `RuGvNw!8doHPlk9P9I2$Ct7hg$k^6ex`
+
+
 
 
 
