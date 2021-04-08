@@ -10,6 +10,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - authentication
   - activities
   - courses
   - course_modules
@@ -25,15 +26,12 @@ search: true
 
 The *API Service* for **InteDashboard™** is available on [GitHub](https://github.com/orgs/CognaLearn/dashboard). The repository named **api3-dev.intedashboard.com**. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique. Vestibulum tincidunt rhoncus sapien ut rutrum. Mauris vel nibh id elit dictum gravida. Maecenas tincidunt et lacus vel vestibulum.  
-
-
 ## Principles
 To support the objective of this documentation, here are the following priniciples that will serve as guidance while using this documentation.
 
 * **Base URL**
 
-    `https://api3-dev.intedashboard.com/api/v1`
+    `uat.intedashboard.com/v2`
 
 * **Standard HTTP Get Parameters** - These parameters are standard for all **list** resources.
 
@@ -122,10 +120,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed nibh nec te
 
 ID | Name | Description
 ------- | ------- | -----------
-`1` | **Superuser** | Lorem ipsum dolor sit amet.
-`2` | **Admin Teacher Account** | Lorem ipsum dolor sit amet.
-`3` | **Teacher** | Lorem ipsum dolor sit amet.
-`4` | **Student** | Lorem ipsum dolor sit amet.
+`1` | **Superuser** | A user with special privileges needed to administer and maintain the system.
+`2` | **Account Admin** | Responsible for reviewing and reconciling courses data in a certain organisation, processing setups and maintaining updated records of Teachers within the organisation.
+`3` | **Teacher** | A user that manages course, module, activity and student data.
+`4` | **Student** |
 
 
 
