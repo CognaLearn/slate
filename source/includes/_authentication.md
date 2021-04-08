@@ -137,12 +137,51 @@ This resource sign-in the token of selected account role.
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-is2FAEnabled <br /> `required`| **boolean** <br /> To identify if the organisation requires 2FA authentication.
+is2FAEnabled <br /> `required`| **boolean** <br /> To identify if the organisation requires 2FA.
 loginToken <br /> `required`| **string** <br /> Token of the selected account role.
 
 
 
 
 
+
+## Sign-in With Two-Factor Authentication
+> 200
+
+```json
+{
+   "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz",
+   "pin": "000000",
+}
+```
+
+> 401
+
+```json
+{
+	"status_code": 401,
+	"message": "Provided pin is invalid."
+}
+```
+
+This resource sign-in the selected account using Two-Factor Authentication .
+
+### HTTP Request
+
+`POST [BASE_URL]/auth/sign-in-with-2fa`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+
+[Standard Request Headers](#principles)
+
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+loginToken <br /> `required`| **string** <br /> Token of the selected account role.
+pin <br /> `required`| **string** <br /> Pin sent to the email of the user.
 
 
