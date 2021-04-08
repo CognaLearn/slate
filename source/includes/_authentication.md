@@ -185,3 +185,49 @@ loginToken <br /> `required`| **string** <br /> Token of the selected account ro
 pin <br /> `required`| **string** <br /> Pin sent to the email of the user.
 
 
+
+
+## Resend Two-Factor Authentication
+> 200
+
+```json
+{
+   "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz",
+   "pin": "000000",
+}
+```
+
+> 422
+
+```json
+{
+	"message": "422 Unprocessable Entity",
+    "errors": {
+        "loginToken": [
+            "The login token is required."
+        ]
+    },
+    "status_code": 422
+}
+```
+
+This resource resends the pin for Two-Factor Authentication.
+
+### HTTP Request
+
+`POST [BASE_URL]/auth/resend-2fa`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+
+[Standard Request Headers](#principles)
+
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+loginToken <br /> `required`| **string** <br /> Token of the selected account role.
+
+
