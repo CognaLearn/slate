@@ -6,7 +6,7 @@ Resources related to <code>authentication</code>.
 
 
 ## Sign-in Verify
-> 401
+> 200
 
 ```json
 {
@@ -14,32 +14,6 @@ Resources related to <code>authentication</code>.
    "message":"OK",
    "result":[
       [
-         {
-            "role":"Account Admin",
-            "loginToken":"jcq48zwORPslEtypnHkG45OJWhyCnVoNMrjAFou6StQH631hFuG4IaJQjRpmd0tWFrPRxjOe5UBHgaJp",
-            "is2FAEnabled":false,
-            "organisation":{
-               "uuid":"08299f88-6223-49aa-84e7-1958d703de6e",
-               "accountName":null,
-               "organisationName":"Cy's University",
-               "isActive":0,
-               "isSuspended":0,
-               "settings":{
-                  "enableLti":false,
-                  "mfaForStudents":false,
-                  "mfaForTeachers":false,
-                  "allowGenericUsers":false,
-                  "defaultTratSettings":[
-                     5,
-                     3,
-                     1,
-                     0
-                  ],
-                  "maxFailedSignInAttempts":3
-               },
-               "isPaid":0
-            }
-         },
          {
             "role":"Student",
             "loginToken":"YhE6n9w9qdHOZzhJ7GAFiCO67usNJkb4nq8Eq8FEaVhk7iKYn8bImNaLgQCQY7iKqSjCFK10SqMauORO",
@@ -64,28 +38,6 @@ Resources related to <code>authentication</code>.
                   "maxFailedSignInAttempts":3
                },
                "isPaid":0
-            }
-         },
-         {
-            "role":"Teacher",
-            "loginToken":"NYFdK8tXyRrDnZ8XtXBc7x9wqMcOKsmDs5XkNxgGPu8VmriwkG75XEdHuIWPvNKeivtlw82i3yG1XAs2",
-            "is2FAEnabled":false,
-            "organisation":{
-               "uuid":"c5a47ef7-eba8-4d7c-805c-3b6cc6abb53c",
-               "accountName":null,
-               "organisationName":"Brian's University",
-               "isActive":0,
-               "isSuspended":0,
-               "settings":null,
-               "isPaid":0
-            }
-         },
-         {
-            "role":"Superuser",
-            "loginToken":"T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz",
-            "is2FAEnabled":true,
-            "organisation":{
-               "organisationName":"Superusers"
             }
          },
       ],
@@ -127,7 +79,7 @@ Resources related to <code>authentication</code>.
 ```
 
 
-This resource unpublishes specific activity.
+This resource verify sign-in of specific account.
 
 ### HTTP Request
 
@@ -148,15 +100,49 @@ identity <br /> `required`| **string** <br /> Email/identity of the user.
 password <br /> `required`| **string** <br /> Password of the user.
 
 
-**Post Parameters**
 
-Sample post values -->
+## Sign-in
+> 200
 
+```json
+{
+   "is2FAEnabled": true,
+   "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz"
+}
 ```
-$data[
-	{
-		"identity": "cy@intedashboard.com",
-		"password": "********"
-	}
-]
+
+> 401
+
+```json
+{
+	"status_code": 401,
+	"message": "Provided login token is invalid."
+}
 ```
+
+This resource sign-in the token of selected account role.
+
+### HTTP Request
+
+`POST [BASE_URL]/auth/sign-in`
+
+### HTTP Get Parameters
+
+`No HTTP get parameters required.`
+
+### Request Headers
+
+[Standard Request Headers](#principles)
+
+### HTTP Post Parameters
+Parameter | Description
+--------- | -----------
+is2FAEnabled <br /> `required`| **boolean** <br /> To identify if the organisation requires 2FA authentication.
+loginToken <br /> `required`| **string** <br /> Token of the selected account role.
+
+
+
+
+
+
+
