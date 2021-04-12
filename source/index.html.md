@@ -81,29 +81,6 @@ Generated token will be included in the value of <b>Authorization</b> key of <i>
     `your-local/roles/7a066d34-abb9-4874-8264-353e3bc451fd`
 
 
-## Winterbreak
-These parameters are standard for all **winterbreak** setups.
-
-* **URL**
-
-    `https://winterbreak-dev.intedashboard.com/winterbreak`
-
-* **Headers** - These values are standard for **authenticated** resources.
-
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **$key** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-<aside>
-Exclusive key value will be included in the value of <b>Authorization</b> key of <i>Winterbreak Headers</i>.
-<br/>
-<code>Authorization: $key</code>
-</aside>
-
-* **Key**
-
-    `RuGvNw!8doHPlk9P9I2$Ct7hg$k^6ex`
 
 
 
