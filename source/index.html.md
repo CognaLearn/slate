@@ -11,12 +11,12 @@ toc_footers:
 
 includes:
   - authentication
-  - activities
+  <!-- - activities
   - courses
   - course_modules
   - dashboard
   - tests
-  - test_discussions
+  - test_discussions -->
   
 search: true
 ---
