@@ -137,7 +137,6 @@ This resource signs in the token of selected account role.
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
-is2FAEnabled <br /> `required`| **boolean** <br /> To identify if the organisation requires 2FA.
 loginToken <br /> `required`| **string** <br /> Token of the selected account role.
 
 
