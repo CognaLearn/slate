@@ -2,6 +2,23 @@
 
 <aside class="notice">
 Resources related to <code>authentication</code>.
+
+
+Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The client must send this token in the Authorization header when making requests to protected resources:
+
+<br/>
+`Authorization: Bearer <token>`
+
+<br/>
+API Authentication requires minimum of two steps (plus an extra step if 2FA is enabled) to generate bearer token.
+
+
+<ol>
+<li>`/v2/sign-in-verify`</li>
+<li>`/v2/sign-in`</li>
+<li>(If 2FA is enabled) `/v2/sign-in-with-2fa`</li>
+</ol>
+
 </aside>
 
 
@@ -54,8 +71,7 @@ Resources related to <code>authentication</code>.
 }
 ```
 
-
-This resource verifies sign-in of specific account.
+Generates a unique login token for sign-in. If the account has multiple roles attached, multiple login tokens will be generated per role.
 
 ### HTTP Request
 
@@ -122,7 +138,10 @@ password <br /> `required`| **string** <br /> Password of the user.
 }
 ```
 
-This resource signs in the token of selected account role.
+If 2FA is enabled, the user will receive an email with a pin that is valid for 15 minutes.
+
+<br/>
+If 2FA is disabled, returns the bearer token immediately.
 
 ### HTTP Request
 
@@ -161,7 +180,7 @@ loginToken <br /> `required`| **string** <br /> Token of the selected account ro
 }
 ```
 
-This resource signs in the selected account using Two-Factor Authentication .
+Returns the bearer token. 2FA PIN is required from Step 2 and Login Token from Step 1.
 
 ### HTTP Request
 
@@ -185,8 +204,7 @@ pin <br /> `required`| **string** <br /> Pin sent to the email of the user.
 
 ```json
 {
-   "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz",
-   "pin": "000000",
+   "success": true,
 }
 ```
 
