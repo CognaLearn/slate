@@ -166,8 +166,29 @@ loginToken <br /> `required`| **string** <br /> Token of the selected account ro
 
 ```json
 {
-   "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz",
-   "pin": "000000",
+   "status_code":200,
+   "isLocked":0,
+   "result":[
+      [
+         {
+            "role":"Student",
+            "loginToken":"2gn2BEDYHIqMOBVFBbX0nm3bvjXWGFBEF0X3YFCoAeYXTKP4XRG5t1qyD4LDtplxsqfiAZwIDbRMDm0d",
+            "is2FAEnabled":false,
+            "organisation":{
+               "uuid":"c5a47ef7-eba8-4d7c-805c-3b6cc6abb53c",
+               "accountName":null,
+               "organisationName":"Brian's University",
+               "isActive":0,
+               "isSuspended":0,
+               "settings":null,
+               "isPaid":0
+            }
+         }
+      ],
+      [
+         
+      ]
+   ]
 }
 ```
 
