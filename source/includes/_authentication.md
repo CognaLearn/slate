@@ -11,50 +11,26 @@ Resources related to <code>authentication</code>.
 ```json
 {
    "status_code":200,
-   "message":"OK",
+   "isLocked":0,
    "result":[
       [
          {
             "role":"Student",
-            "loginToken":"YhE6n9w9qdHOZzhJ7GAFiCO67usNJkb4nq8Eq8FEaVhk7iKYn8bImNaLgQCQY7iKqSjCFK10SqMauORO",
+            "loginToken":"2gn2BEDYHIqMOBVFBbX0nm3bvjXWGFBEF0X3YFCoAeYXTKP4XRG5t1qyD4LDtplxsqfiAZwIDbRMDm0d",
             "is2FAEnabled":false,
             "organisation":{
-               "uuid":"08299f88-6223-49aa-84e7-1958d703de6e",
+               "uuid":"c5a47ef7-eba8-4d7c-805c-3b6cc6abb53c",
                "accountName":null,
-               "organisationName":"Cy's University",
-               "isActive":0,
-               "isSuspended":0,
-               "settings":{
-                  "enableLti":false,
-                  "mfaForStudents":false,
-                  "mfaForTeachers":false,
-                  "allowGenericUsers":false,
-                  "defaultTratSettings":[
-                     5,
-                     3,
-                     1,
-                     0
-                  ],
-                  "maxFailedSignInAttempts":3
-               },
-               "isPaid":0
-            }
-         },
-      ],
-      [
-         {
-            "role":"Account Admin",
-            "organisation":{
-               "uuid":"f5018d73-5b20-4cca-87a7-aba9d5fd0f6a",
-               "accountName":null,
-               "organisationName":"Cy",
+               "organisationName":"Brian's University",
                "isActive":0,
                "isSuspended":0,
                "settings":null,
                "isPaid":0
-            },
-            "message":"Identity or Password is invalid."
-         },
+            }
+         }
+      ],
+      [
+         
       ]
    ]
 }
@@ -104,6 +80,36 @@ password <br /> `required`| **string** <br /> Password of the user.
 {
    "is2FAEnabled": true,
    "loginToken": "T5bUK8KBOmUW301XUMSnPuqGypvdLRBSRiPOcYyZkZhxqWx3NMDp2g4hgCzTunJvQFR0UwaTn6EI5lSz"
+}
+```
+
+> 200
+
+```json
+{
+   "status_code":200,
+   "isLocked":0,
+   "result":[
+      [
+         {
+            "role":"Student",
+            "loginToken":"2gn2BEDYHIqMOBVFBbX0nm3bvjXWGFBEF0X3YFCoAeYXTKP4XRG5t1qyD4LDtplxsqfiAZwIDbRMDm0d",
+            "is2FAEnabled":false,
+            "organisation":{
+               "uuid":"c5a47ef7-eba8-4d7c-805c-3b6cc6abb53c",
+               "accountName":null,
+               "organisationName":"Brian's University",
+               "isActive":0,
+               "isSuspended":0,
+               "settings":null,
+               "isPaid":0
+            }
+         }
+      ],
+      [
+         
+      ]
+   ]
 }
 ```
 
