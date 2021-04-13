@@ -7,7 +7,7 @@ Resources related to <code>authentication</code>.
 Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The client must send this token in the Authorization header when making requests to protected resources:
 
 <br/><br/>
-<code>Authorization: Bearer ```html <token> ```</code>.
+<code>Authorization: Bearer [token]</code>.
 
 <br/><br/>
 API Authentication requires minimum of two steps (plus an extra step if 2FA is enabled) to generate bearer token.

@@ -25,7 +25,7 @@ To support the objective of this documentation, here are the following prinicipl
 
 * **Base URL**
 
-    `uat.intedashboard.com/v2`
+    `api3-uat.intedashboard.com/v2`
 
 * **Standard HTTP Get Parameters** - These parameters are standard for all **list** resources.
 
