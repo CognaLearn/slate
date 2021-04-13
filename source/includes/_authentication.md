@@ -7,7 +7,7 @@ Resources related to <code>authentication</code>.
 Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The client must send this token in the Authorization header when making requests to protected resources:
 
 <br/><br/>
-<code>Authorization: Bearer \<token\></code>.
+<code>Authorization: Bearer ```html <token> ```</code>.
 
 <br/><br/>
 API Authentication requires minimum of two steps (plus an extra step if 2FA is enabled) to generate bearer token.
@@ -166,29 +166,57 @@ loginToken <br /> `required`| **string** <br /> Token of the selected account ro
 
 ```json
 {
-   "status_code":200,
-   "isLocked":0,
-   "result":[
-      [
-         {
-            "role":"Student",
-            "loginToken":"2gn2BEDYHIqMOBVFBbX0nm3bvjXWGFBEF0X3YFCoAeYXTKP4XRG5t1qyD4LDtplxsqfiAZwIDbRMDm0d",
-            "is2FAEnabled":false,
-            "organisation":{
-               "uuid":"c5a47ef7-eba8-4d7c-805c-3b6cc6abb53c",
-               "accountName":null,
-               "organisationName":"Brian's University",
-               "isActive":0,
-               "isSuspended":0,
-               "settings":null,
-               "isPaid":0
-            }
+   "data":{
+      "status_code":200,
+      "message":"OK",
+      "user":{
+         "role":"Student",
+         "roleId":4,
+         "isDeletable":1,
+         "avatar":null,
+         "firstname":"Jake",
+         "lastname":"Harden",
+         "uuid":"2149a364-c610-4695-a1e6-5aa76be50206",
+         "displayName":"Jake Harden",
+         "identity":"jharden@gmail.com",
+         "email":"jharden@gmail.com",
+         "canAddTeacher":0,
+         "canUseExpressSignIn":0,
+         "isMultipleUser":false,
+         "dateLtiSignin":null,
+         "status":"Active",
+         "origin":"Email",
+         "paidDate":null,
+         "account":{
+            "uuid":"08299f88-6223-49aa-84e7-1958d703de6e",
+            "paymentMethod":"Institution",
+            "type":"Free Trial",
+            "organisationName":"Cy's University",
+            "settings":{
+               "enableLti":false,
+               "mfaForStudents":false,
+               "mfaForTeachers":false,
+               "allowGenericUsers":false,
+               "defaultTratSettings":[
+                  5,
+                  3,
+                  1,
+                  0
+               ],
+               "maxFailedSignInAttempts":3
+            },
+            "version":"full",
+            "paymentPlans":[
+               
+            ]
          }
-      ],
-      [
-         
-      ]
-   ]
+      },
+      "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvdjJcL3Bhc3N3b3JkXC9yZXNldCIsImlhdCI6MTYxNzg4NDg0OSwibmJmIjoxNjE3ODg0ODQ5LCJqdGkiOiJMNVFPZ1ZNVnJOREtSSTRpIiwic3ViIjoxNjA0MCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.Ze-V5OQ_-w8M-TQ6iwbSWrdSOs81ErUTiCOAEbZ_IeU",
+      "required_change_password":0,
+      "currentTime":1617884849,
+      "api_url":"http://127.0.0.1:8000/v2",
+      "isGeneric":false
+   }
 }
 ```
 
@@ -314,12 +342,12 @@ email <br /> `required`| **string** <br /> Email of the user.
          "roleId":4,
          "isDeletable":1,
          "avatar":null,
-         "firstname":"Nino",
-         "lastname":"Soliven",
+         "firstname":"Jake",
+         "lastname":"Harden",
          "uuid":"2149a364-c610-4695-a1e6-5aa76be50206",
-         "displayName":"Nino Soliven",
-         "identity":"nino+1@intedashboard.com",
-         "email":"nino+1@intedashboard.com",
+         "displayName":"Jake Harden",
+         "identity":"jharden@gmail.com",
+         "email":"jharden@gmail.com",
          "canAddTeacher":0,
          "canUseExpressSignIn":0,
          "isMultipleUser":false,
