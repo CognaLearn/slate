@@ -85,10 +85,6 @@ This resource verifies sign-in of specific account.
 
 `POST [BASE_URL]/auth/sign-in-verify`
 
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
-
 ### Request Headers
 
 [Standard Request Headers](#principles)
@@ -125,10 +121,6 @@ This resource signs in the token of selected account role.
 ### HTTP Request
 
 `POST [BASE_URL]/auth/sign-in`
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
 
 ### Request Headers
 
@@ -168,10 +160,6 @@ This resource signs in the selected account using Two-Factor Authentication .
 ### HTTP Request
 
 `POST [BASE_URL]/auth/sign-in-with-2fa`
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
 
 ### Request Headers
 
@@ -216,10 +204,6 @@ This resource resends the pin for Two-Factor Authentication.
 
 `POST [BASE_URL]/auth/resend-2fa`
 
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
-
 ### Request Headers
 
 [Standard Request Headers](#principles)
@@ -259,10 +243,6 @@ This resource sends token to the user.
 ### HTTP Request
 
 `POST [BASE_URL]/password/send-token`
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
 
 ### Request Headers
 
@@ -363,10 +343,6 @@ This resource resets password of the account.
 ### HTTP Request
 
 `POST [BASE_URL]/password/reset`
-
-### HTTP Get Parameters
-
-`No HTTP get parameters required.`
 
 ### Request Headers
 
