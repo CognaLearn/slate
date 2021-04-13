@@ -18,7 +18,7 @@ search: true
 
 # Introduction
 
-The *API Service* for **InteDashboard™** is available on [GitHub](https://github.com/orgs/CognaLearn/dashboard). The repository named **api3-dev.intedashboard.com**. 
+The *API Service* for **InteDashboard™** is available on [GitHub](https://github.com/orgs/CognaLearn/dashboard).
 
 ## Principles
 To support the objective of this documentation, here are the following priniciples that will serve as guidance while using this documentation.
@@ -61,20 +61,6 @@ Returns trashed records only.<br/><br/>
 <code>isTrashed=false</code> or <code>isTrashed=0</code> <br/>
 Returns untrashed records only.<br/><br/>
 </aside>
-
-* **Standard Request Headers** - These values are standard for **authenticated** resources.
-
-Key | Value | Description
---------- | ------- | -----------
-`Content-Type` | **application/json** | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh vel nisl iaculis tristique.
-`Authorization` | **Bearer $token** | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-<aside>
-Generated token will be included in the value of <b>Authorization</b> key of <i>Request Headers</i>.
-<br/>
-<code>Authorization: Bearer $token</code>
-</aside>
-
 
 * **UUID** property will be used as a reference id in URI
 
