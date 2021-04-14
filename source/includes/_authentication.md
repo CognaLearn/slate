@@ -77,10 +77,6 @@ Generates a unique login token for sign-in. If the account has multiple roles at
 
 `POST [BASE_URL]/auth/sign-in-verify`
 
-### Request Headers
-
-[Standard Request Headers](#principles)
-
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
@@ -146,10 +142,6 @@ If 2FA is disabled, returns the bearer token immediately.
 ### HTTP Request
 
 `POST [BASE_URL]/auth/sign-in`
-
-### Request Headers
-
-[Standard Request Headers](#principles)
 
 ### HTTP Post Parameters
 Parameter | Description
@@ -235,10 +227,6 @@ Returns the bearer token. 2FA PIN is required from Step 2 and Login Token from S
 
 `POST [BASE_URL]/auth/sign-in-with-2fa`
 
-### Request Headers
-
-[Standard Request Headers](#principles)
-
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
@@ -277,10 +265,6 @@ This resource resends the pin for Two-Factor Authentication.
 
 `POST [BASE_URL]/auth/resend-2fa`
 
-### Request Headers
-
-[Standard Request Headers](#principles)
-
 ### HTTP Post Parameters
 Parameter | Description
 --------- | -----------
@@ -316,10 +300,6 @@ This resource sends token to the user.
 ### HTTP Request
 
 `POST [BASE_URL]/password/send-token`
-
-### Request Headers
-
-[Standard Request Headers](#principles)
 
 ### HTTP Post Parameters
 Parameter | Description
@@ -416,10 +396,6 @@ This resource resets password of the account.
 ### HTTP Request
 
 `POST [BASE_URL]/password/reset`
-
-### Request Headers
-
-[Standard Request Headers](#principles)
 
 ### HTTP Post Parameters
 Parameter | Description
